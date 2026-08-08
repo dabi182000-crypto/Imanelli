@@ -23,9 +23,9 @@
             "mobile_image": "shopify://shop_images/imanelli-couture-craft-mobile.jpg",
             "image_alt": "Imanelli Couture label being hand stitched onto satin fabric",
             "eyebrow": "The Art of Couture",
-            "heading": "Handcrafted in Every Stitch",
-            "text": "<p>Where timeless elegance meets considered detail.</p>",
-            "button_label": "Discover New Arrivals",
+            "heading": "Crafted by Hand",
+            "text": "<p>Considered in every detail.</p>",
+            "button_label": "Explore New Arrivals",
             "button_link": "shopify://collections/all",
             "text_color": "#F4D8CF",
             "overlay_opacity": 0
