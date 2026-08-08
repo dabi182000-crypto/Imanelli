@@ -571,6 +571,14 @@
       </div>
     </div>
   </product-component>
+  <div class="imanelli-card-actions">
+    <a class="button imanelli-card-add" href="{{ card_product.url }}">
+      {{ 'products.product.add_to_cart' | t }}
+    </a>
+    <a class="button imanelli-card-buy-now" href="{{ card_product.url }}">
+      {{ 'products.product.buy_it_now' | t | default: 'Buy now' }}
+    </a>
+  </div>
 {%- else -%}
   {%- liquid
     assign ratio = 1
