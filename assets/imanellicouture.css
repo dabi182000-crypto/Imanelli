@@ -776,3 +776,44 @@ h5,
     transition: none;
   }
 }
+
+
+/* Imanelli global dusty-pink CTA override */
+.button,
+.button:not([class*='button--']),
+.shopify-payment-button__button--unbranded,
+.product-form__submit,
+.quick-add__submit,
+.cart__checkout-button,
+.contact__button .button,
+.imanelli-hero__button,
+.imanelli-hero-slider__button {
+  --color-button: 216, 170, 164 !important;
+  --color-button-text: 23, 23, 23 !important;
+  --alpha-button-background: 1 !important;
+  background-color: #d8aaa4 !important;
+  color: #171717 !important;
+  border-color: #d8aaa4 !important;
+}
+
+.button::before,
+.button::after,
+.shopify-payment-button__button--unbranded::before,
+.shopify-payment-button__button--unbranded::after {
+  border-color: #d8aaa4 !important;
+  box-shadow: none !important;
+}
+
+.button:not([disabled]):hover,
+.shopify-payment-button__button--unbranded:not([disabled]):hover,
+.product-form__submit:not([disabled]):hover,
+.quick-add__submit:not([disabled]):hover,
+.cart__checkout-button:not([disabled]):hover,
+.contact__button .button:not([disabled]):hover,
+.imanelli-hero__button:hover,
+.imanelli-hero-slider__button:hover {
+  --color-button: 201, 143, 137 !important;
+  background-color: #c98f89 !important;
+  color: #171717 !important;
+  border-color: #c98f89 !important;
+}
