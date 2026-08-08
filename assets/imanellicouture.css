@@ -18,6 +18,8 @@
   --imanelli-ink: #171717;
   --imanelli-ivory: #faf7f2;
   --imanelli-blush: #e8c3bc;
+  --imanelli-button-pink: #d8aaa4;
+  --imanelli-button-pink-hover: #c98f89;
   --imanelli-stone: #b7a89b;
   --imanelli-burgundy: #682832;
   --imanelli-border: rgba(23, 23, 23, 0.14);
@@ -243,12 +245,13 @@ h5,
 }
 
 .imanelli-hero__button {
-  background: var(--imanelli-ink);
-  color: var(--imanelli-ivory);
+  background: var(--imanelli-button-pink);
+  color: var(--imanelli-ink);
 }
 
 .imanelli-hero__button:hover {
-  background: var(--imanelli-burgundy);
+  background: var(--imanelli-button-pink-hover);
+  color: var(--imanelli-ink);
 }
 
 .imanelli-collection-tiles {
