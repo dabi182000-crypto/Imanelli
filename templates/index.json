@@ -12,19 +12,6 @@
     "imanelli_hero": {
       "type": "imanelli-hero-slider",
       "blocks": {
-        "grace_in_every_fold": {
-          "type": "slide",
-          "settings": {
-            "image_alt": "Woman in a black embroidered Imanelli Couture abaya framed by flowing ivory chiffon",
-            "eyebrow": "A Study in Modern Modesty",
-            "heading": "Grace, Written in Every Fold",
-            "text": "<p>Quiet confidence, shaped in movement.</p>",
-            "button_label": "Discover the collection",
-            "button_link": "shopify://collections/all",
-            "text_color": "#171717",
-            "overlay_opacity": 0
-          }
-        },
         "modesty_becomes_art": {
           "type": "slide",
           "settings": {
@@ -55,9 +42,8 @@
         }
       },
       "block_order": [
-        "grace_in_every_fold",
-        "modesty_becomes_art",
-        "move_with_you"
+        "move_with_you",
+        "modesty_becomes_art"
       ],
       "settings": {
         "autoplay": true,
