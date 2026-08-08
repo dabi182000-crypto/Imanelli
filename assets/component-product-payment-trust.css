@@ -1,0 +1,68 @@
+.product-payment-trust {
+  margin-top: 1.4rem;
+  padding: 1.2rem 1.4rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-radius: 0.8rem;
+  background: rgba(var(--color-background), 0.75);
+  text-align: center;
+}
+
+.product-payment-trust__message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.78);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.product-payment-trust__message svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 auto;
+}
+
+.product-payment-trust__icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-payment-trust__icons:empty {
+  display: none;
+}
+
+.product-payment-trust__icons li {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.product-payment-trust__icons svg {
+  width: auto;
+  height: 2.4rem;
+  max-width: 4rem;
+}
+
+.product-payment-trust__note {
+  margin: 0.8rem 0 0;
+  color: rgba(var(--color-foreground), 0.62);
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 749px) {
+  .product-payment-trust {
+    margin-top: 1.2rem;
+    padding: 1.1rem 1.2rem;
+  }
+}
