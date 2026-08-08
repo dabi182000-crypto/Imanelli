@@ -70,16 +70,11 @@
               {%- endif -%}
             </div>
           </a>
-          {%- if card_product != blank -%}
-            <div class="imanelli-product-card__actions">
-              <a class="button imanelli-product-card__add" href="{{ card_product.url }}">
-                {{ 'products.product.add_to_cart' | t }}
-              </a>
-              <a class="button imanelli-product-card__buy-now" href="{{ card_product.url }}">
-                Buy now
-              </a>
-            </div>
-          {%- endif -%}
+          <div class="imanelli-product-card__actions">
+            <a class="button imanelli-product-card__add" href="{{ card_link }}">
+              {{ 'products.product.add_to_cart' | t }}
+            </a>
+          </div>
         </article>
       {%- endfor -%}
     </div>
