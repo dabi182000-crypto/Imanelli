@@ -124,9 +124,24 @@
 }
 
 @media screen and (max-width: 749px) {
-  .collection #product-grid > .grid__item + .grid__item {
-    border-top: 1px solid rgba(var(--color-foreground), 0.14);
-    padding-top: 2.4rem;
-    margin-top: 2.4rem;
+  .collection #product-grid > .grid__item {
+    position: relative;
+    padding-bottom: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .collection #product-grid > .grid__item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 90%;
+    height: 1px;
+    background: rgba(var(--color-foreground), 0.22);
+  }
+
+  .collection #product-grid > .grid__item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }
