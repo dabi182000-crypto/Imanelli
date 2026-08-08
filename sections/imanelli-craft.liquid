@@ -1,0 +1,102 @@
+<section class="imanelli-section imanelli-craft{% if section.settings.reverse_layout %} imanelli-craft--reverse{% endif %}">
+  <div class="imanelli-craft__media">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 2200
+        | image_tag:
+          widths: '750, 1100, 1500, 1800, 2200',
+          sizes: '(min-width: 990px) 58vw, 100vw',
+          loading: 'lazy',
+          alt: section.settings.image_alt
+      }}
+    {%- else -%}
+      <img
+        src="{{ 'imanellicouture-craft.webp' | asset_url }}"
+        width="1600"
+        height="1200"
+        loading="lazy"
+        alt="{{ section.settings.image_alt | escape }}"
+      >
+    {%- endif -%}
+  </div>
+  <div class="imanelli-craft__content">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="imanelli-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="imanelli-craft__title">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="imanelli-craft__copy rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+    {%- if section.settings.link_label != blank -%}
+      <div>
+        <a class="imanelli-text-link" href="{{ section.settings.link | default: routes.root_url }}">
+          {{ section.settings.link_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Imanelli craftsmanship",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Artisan hand-finishing black embroidery on an abaya"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Crafted with intention"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Timeless fabrics, expertly made"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Every Imanelli abaya is considered in every line, from the first fabric selection to the final hand-finished detail.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Our story"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Place image on the right",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imanelli craftsmanship"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,103 @@
+{%- liquid
+  assign is_ar = false
+  if request.locale.iso_code == 'ar'
+    assign is_ar = true
+  endif
+  assign page_kind = page.template_suffix | default: 'our-story'
+-%}
+
+<section class="imanelli-info-page{% if is_ar %} imanelli-info-page--rtl{% endif %}">
+  <div class="page-width imanelli-info-page__inner">
+    {%- case page_kind -%}
+      {%- when 'our-story' -%}
+        {% if is_ar %}
+          <p class="imanelli-eyebrow">إيمانيلّي كوتور</p>
+          <h1>قصتنا</h1>
+          <p class="imanelli-info-page__lead">عبايات عصرية تنسج الأناقة الهادئة من منظور محلي في الدوحة.</p>
+          <div class="imanelli-info-page__grid">
+            <article><h2>رؤية معاصرة</h2><p>توازن إيمانيلّي بين الاحتشام والخطوط الحديثة لتقدّم قطعاً واثقة وسهلة الارتداء.</p></article>
+            <article><h2>تفاصيل مدروسة</h2><p>نولي اهتماماً للقماش والانسيابية والتطريز واللمسات النهائية حتى تبدو كل قطعة متكاملة.</p></article>
+            <article><h2>مصممة في الدوحة</h2><p>تستلهم الدار إيقاع قطر وذوق المرأة التي تبحث عن أناقة راقية بدون مبالغة.</p></article>
+          </div>
+        {% else %}
+          <p class="imanelli-eyebrow">Imanelli Couture</p>
+          <h1>Our Story</h1>
+          <p class="imanelli-info-page__lead">Modern abayas shaped by quiet confidence and a local perspective in Doha.</p>
+          <div class="imanelli-info-page__grid">
+            <article><h2>A modern point of view</h2><p>Imanelli balances modest dressing with contemporary lines to create pieces that feel confident and effortless.</p></article>
+            <article><h2>Considered details</h2><p>Fabric, drape, embroidery and finishing are approached with care so every piece feels complete.</p></article>
+            <article><h2>Designed in Doha</h2><p>The house reflects the rhythm of Qatar and the woman who values refined elegance without excess.</p></article>
+          </div>
+        {% endif %}
+
+      {%- when 'size-guide' -%}
+        {% if is_ar %}
+          <p class="imanelli-eyebrow">المقاس والطول</p>
+          <h1>دليل المقاسات</h1>
+          <p class="imanelli-info-page__lead">هذا دليل مبدئي. قد تختلف الخيارات حسب التصميم وسيتم تأكيدها قبل تجهيز الطلب.</p>
+          <div class="imanelli-size-preview">
+            <div><h2>المقاسات</h2><p>S · M · L · XL</p></div>
+            <div><h2>الأطوال</h2><p>52 · 54 · 56 · 58 · 60 إنش</p></div>
+          </div>
+          <p>اختاري المقاس المعتاد والطول المناسب لك. سنضيف قياسات القطعة التفصيلية بعد اعتمادها لكل تصميم.</p>
+        {% else %}
+          <p class="imanelli-eyebrow">Fit & length</p>
+          <h1>Size Guide</h1>
+          <p class="imanelli-info-page__lead">This is a preliminary guide. Options may vary by design and will be confirmed before fulfillment.</p>
+          <div class="imanelli-size-preview">
+            <div><h2>Preview sizes</h2><p>S · M · L · XL</p></div>
+            <div><h2>Preview lengths</h2><p>52 · 54 · 56 · 58 · 60 inches</p></div>
+          </div>
+          <p>Select your usual size and preferred length. Detailed garment measurements will be added once approved for each design.</p>
+        {% endif %}
+
+      {%- when 'care-guide' -%}
+        {% if is_ar %}
+          <p class="imanelli-eyebrow">العناية بالقطعة</p><h1>دليل العناية بالعباية</h1>
+          <div class="imanelli-info-page__grid"><article><h2>اتبعي بطاقة العناية</h2><p>تعليمات القطعة المرفقة هي المرجع الأول لأن الخامات والتفاصيل قد تختلف.</p></article><article><h2>تنظيف احترافي</h2><p>ننصح بالتنظيف الجاف الاحترافي للحفاظ على القماش والتطريز.</p></article><article><h2>تخزين لطيف</h2><p>تُعلّق العباية داخل غطاء قماشي يسمح بالتهوية وبعيداً عن الرطوبة والضوء المباشر.</p></article></div>
+        {% else %}
+          <p class="imanelli-eyebrow">Preserve every detail</p><h1>Abaya Care Guide</h1>
+          <div class="imanelli-info-page__grid"><article><h2>Follow the care label</h2><p>The label supplied with the piece is the first reference because fabrics and details may vary.</p></article><article><h2>Professional cleaning</h2><p>Professional dry cleaning is recommended to protect the fabric and embroidery.</p></article><article><h2>Gentle storage</h2><p>Store hanging in a breathable garment bag, away from moisture and direct light.</p></article></div>
+        {% endif %}
+
+      {%- when 'delivery-returns' -%}
+        {% if is_ar %}
+          <p class="imanelli-eyebrow">خدمة داخل قطر</p><h1>التوصيل والاستبدال والاسترجاع</h1>
+          <div class="imanelli-info-page__stack"><article><h2>توصيل سريع ومميز</h2><p>نوفر التوصيل داخل قطر بعناية. تظهر التفاصيل النهائية عند إتمام الطلب.</p></article><article><h2>الاستبدال والاسترجاع خلال يومين</h2><p>يجب تقديم طلب الاستبدال أو الاسترجاع للقطع المؤهلة خلال يومين من استلام الطلب. يجب أن تكون القطعة غير ملبوسة وغير مستخدمة وبحالتها الأصلية مع جميع البطاقات.</p></article><article><h2>الطلبات الخاصة</h2><p>قد تخضع القطع المعدلة أو المصنوعة حسب الطلب لشروط مختلفة يتم توضيحها قبل تأكيد الطلب.</p></article></div>
+        {% else %}
+          <p class="imanelli-eyebrow">Service within Qatar</p><h1>Delivery, Returns & Exchanges</h1>
+          <div class="imanelli-info-page__stack"><article><h2>Premium fast delivery</h2><p>We arrange careful delivery throughout Qatar. Final delivery details are shown during checkout.</p></article><article><h2>2-day returns and exchanges</h2><p>Return or exchange requests for eligible pieces must be submitted within 2 days of receiving the order. Items must be unworn, unused and in their original condition with all tags attached.</p></article><article><h2>Custom orders</h2><p>Altered or made-to-order pieces may follow different conditions, which will be explained before the order is confirmed.</p></article></div>
+        {% endif %}
+
+      {%- when 'faq' -%}
+        {% if is_ar %}
+          <p class="imanelli-eyebrow">إجابات واضحة</p><h1>الأسئلة الشائعة</h1>
+          <div class="imanelli-faq"><details open><summary>أين يتم التوصيل؟</summary><p>نوفر التوصيل داخل قطر فقط.</p></details><details><summary>ما الفرق بين الجاهز وحسب الطلب؟</summary><p>القطع الجاهزة تكون متوفرة للتجهيز، أما القطع حسب الطلب فتُحضّر وفق التفاصيل المتفق عليها.</p></details><details><summary>هل تتوفر تعديلات؟</summary><p>نعم، نقدم تعديلات وخيارات خاصة عندما يسمح التصميم بذلك.</p></details><details><summary>كيف أختار المقاس والطول؟</summary><p>استخدمي دليل المقاسات المبدئي، وسيتم تأكيد الخيارات المتاحة لكل تصميم.</p></details><details><summary>هل يمكن الاستبدال أو الاسترجاع؟</summary><p>نعم للقطع المؤهلة. يجب تقديم الطلب خلال يومين من الاستلام وأن تكون القطعة غير مستخدمة وبحالتها الأصلية مع البطاقات.</p></details></div>
+        {% else %}
+          <p class="imanelli-eyebrow">Clear answers</p><h1>Frequently Asked Questions</h1>
+          <div class="imanelli-faq"><details open><summary>Where do you deliver?</summary><p>Delivery is currently available within Qatar only.</p></details><details><summary>What is the difference between Ready to Wear and Made to Order?</summary><p>Ready-to-wear pieces are available for preparation, while made-to-order pieces are created according to the details confirmed with you.</p></details><details><summary>Do you offer alterations?</summary><p>Yes. Personal alterations and custom options are available when the design allows.</p></details><details><summary>How do I select size and length?</summary><p>Use the preliminary size guide, and the available options will be confirmed for each design.</p></details><details><summary>Can I return or exchange an order?</summary><p>Yes, for eligible pieces. Requests must be submitted within 2 days of delivery, and items must be unused and in their original condition with tags attached.</p></details></div>
+        {% endif %}
+
+      {%- when 'custom-orders' -%}
+        {% if is_ar %}
+          <p class="imanelli-eyebrow">صُممت لك</p><h1>الطلبات الخاصة والتعديلات</h1>
+          <p class="imanelli-info-page__lead">نقدم خدمة حسب الطلب وتعديلات شخصية لبعض التصاميم.</p>
+          <ol class="imanelli-steps"><li><strong>تواصلي معنا</strong><span>شاركي التصميم والمقاس والطول المطلوب.</span></li><li><strong>تأكيد التفاصيل</strong><span>نراجع الإمكانية والتكلفة ومدة التجهيز قبل اعتماد الطلب.</span></li><li><strong>التنفيذ بعناية</strong><span>تبدأ صناعة أو تعديل القطعة بعد الموافقة النهائية.</span></li></ol>
+        {% else %}
+          <p class="imanelli-eyebrow">Made for you</p><h1>Custom Orders & Alterations</h1>
+          <p class="imanelli-info-page__lead">Made-to-order service and personal alterations are available for selected designs.</p>
+          <ol class="imanelli-steps"><li><strong>Start a conversation</strong><span>Share the design, size and preferred length.</span></li><li><strong>Confirm the details</strong><span>Availability, price and preparation time are reviewed before approval.</span></li><li><strong>Crafted with care</strong><span>Creation or alteration begins after final confirmation.</span></li></ol>
+        {% endif %}
+    {%- endcase -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Imanelli editorial page",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "presets": [{"name": "Imanelli editorial page"}]
+}
+{% endschema %}

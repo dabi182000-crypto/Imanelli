@@ -1,0 +1,179 @@
+{
+  "accessibility": {
+    "skip_to_text": "الانتقال إلى المحتوى",
+    "skip_to_product_info": "الانتقال إلى معلومات المنتج",
+    "close": "إغلاق",
+    "unit_price_separator": "لكل",
+    "vendor": "العلامة:",
+    "error": "خطأ",
+    "refresh_page": "يؤدي اختيار أحد الخيارات إلى تحديث الصفحة.",
+    "link_messages": {
+      "new_window": "يفتح في نافذة جديدة.",
+      "external": "يفتح موقعاً خارجياً."
+    },
+    "loading": "جارٍ التحميل...",
+    "collapsible_content_title": "محتوى قابل للفتح"
+  },
+  "general": {
+    "continue_shopping": "متابعة التسوق",
+    "pagination": {
+      "label": "التنقل بين الصفحات",
+      "page": "الصفحة {{ number }}",
+      "next": "الصفحة التالية",
+      "previous": "الصفحة السابقة"
+    },
+    "search": {
+      "search": "بحث",
+      "reset": "مسح البحث"
+    },
+    "cart": {
+      "view": "عرض السلة ({{ count }})",
+      "view_empty_cart": "عرض السلة",
+      "item_added": "تمت إضافة المنتج إلى السلة"
+    },
+    "share": {
+      "close": "إغلاق المشاركة",
+      "copy_to_clipboard": "نسخ الرابط",
+      "share_url": "الرابط",
+      "success_message": "تم نسخ الرابط"
+    }
+  },
+  "localization": {
+    "country_label": "الدولة/المنطقة",
+    "language_label": "اللغة",
+    "update_language": "تحديث اللغة",
+    "update_country": "تحديث الدولة/المنطقة",
+    "search": "بحث",
+    "popular_countries_regions": "الدول والمناطق الشائعة",
+    "country_results_count": "تم العثور على {{ count }} دولة/منطقة"
+  },
+  "newsletter": {
+    "label": "البريد الإلكتروني",
+    "success": "شكراً لاشتراكك",
+    "button_label": "اشتركي"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "أضيفي إلى السلة",
+      "choose_options": "اختاري الخيارات",
+      "choose_product_options": "اختاري خيارات {{ product_name }}",
+      "description": "الوصف",
+      "inventory_in_stock": "متوفر",
+      "inventory_in_stock_show_count": "متوفر: {{ quantity }}",
+      "inventory_low_stock": "كمية محدودة",
+      "inventory_low_stock_show_count": "متبقي {{ quantity }} فقط",
+      "inventory_out_of_stock": "غير متوفر",
+      "inventory_out_of_stock_continue_selling": "متوفر للطلب",
+      "sku": "رمز المنتج",
+      "on_sale": "تخفيض",
+      "product_variants": "خيارات المنتج",
+      "nested_label": "{{ title }} لـ {{ parent_title }}",
+      "quantity": {
+        "label": "الكمية",
+        "input_label": "كمية {{ product }}",
+        "increase": "زيادة كمية {{ product }}",
+        "decrease": "تقليل كمية {{ product }}"
+      },
+      "price": {
+        "from_price_html": "ابتداءً من {{ price }}",
+        "regular_price": "السعر العادي",
+        "sale_price": "سعر التخفيض",
+        "unit_price": "سعر الوحدة"
+      },
+      "share": "مشاركة المنتج",
+      "sold_out": "نفد المخزون",
+      "unavailable": "غير متوفر",
+      "vendor": "العلامة",
+      "value_unavailable": "{{ option_value }} - غير متوفر",
+      "variant_sold_out_or_unavailable": "الخيار غير متوفر أو نفد",
+      "view_full_details": "عرض التفاصيل كاملة",
+      "taxes_included": "الضرائب مشمولة.",
+      "shipping_policy_html": "يتم احتساب <a href=\"{{ link }}\">التوصيل</a> عند إتمام الطلب."
+    },
+    "facets": {
+      "apply": "تطبيق",
+      "clear": "مسح",
+      "clear_all": "مسح الكل",
+      "filter_and_sort": "تصفية وترتيب",
+      "filter_by_label": "تصفية:",
+      "sort_by_label": "الترتيب حسب:",
+      "product_count_simple": "{{ count }} منتج",
+      "show_more": "عرض المزيد",
+      "show_less": "عرض أقل"
+    }
+  },
+  "templates": {
+    "contact": {
+      "form": {
+        "title": "نموذج التواصل",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "comment": "الرسالة",
+        "send": "إرسال",
+        "post_success": "شكراً لتواصلك معنا. سنرد عليك في أقرب وقت.",
+        "error_heading": "يرجى مراجعة التالي:"
+      }
+    },
+    "search": {
+      "no_results": "لم يتم العثور على نتائج لـ «{{ terms }}».",
+      "page": "صفحة",
+      "products": "المنتجات",
+      "title": "نتائج البحث",
+      "search_for": "البحث عن «{{ terms }}»",
+      "suggestions": "اقتراحات",
+      "pages": "الصفحات"
+    },
+    "cart": {
+      "cart": "السلة"
+    },
+    "404": {
+      "title": "الصفحة غير موجودة",
+      "subtext": "404"
+    }
+  },
+  "sections": {
+    "header": {
+      "announcement": "إعلان",
+      "menu": "القائمة",
+      "cart_count": {
+        "one": "{{ count }} منتج",
+        "other": "{{ count }} منتجات"
+      }
+    },
+    "cart": {
+      "title": "سلة التسوق",
+      "caption": "منتجات السلة",
+      "remove_title": "إزالة {{ title }}",
+      "estimated_total": "الإجمالي المتوقع",
+      "new_estimated_total": "الإجمالي المتوقع الجديد",
+      "note": "ملاحظات خاصة بالطلب",
+      "checkout": "إتمام الطلب",
+      "empty": "سلة التسوق فارغة",
+      "cart_error": "حدث خطأ أثناء تحديث السلة. يرجى المحاولة مرة أخرى.",
+      "cart_quantity_error_html": "يمكنك إضافة {{ quantity }} فقط من هذا المنتج.",
+      "headings": {
+        "product": "المنتج",
+        "price": "السعر",
+        "total": "الإجمالي",
+        "quantity": "الكمية",
+        "image": "صورة المنتج"
+      },
+      "update": "تحديث"
+    },
+    "footer": {
+      "payment": "طرق الدفع"
+    },
+    "featured_collection": {
+      "view_all": "عرض الكل",
+      "view_all_label": "عرض جميع منتجات مجموعة {{ collection_name }}"
+    },
+    "collection_list": {
+      "view_all": "عرض الكل"
+    },
+    "collection_template": {
+      "empty": "لا توجد منتجات",
+      "title": "المجموعة"
+    }
+  }
+}

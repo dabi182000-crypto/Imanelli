@@ -1,0 +1,191 @@
+{
+  "sections": {
+    "imanelli_hero": {
+      "type": "imanelli-hero-slider",
+      "blocks": {
+        "grace_in_every_fold": {
+          "type": "slide",
+          "settings": {
+            "image_alt": "Woman in a black embroidered Imanelli Couture abaya framed by flowing ivory chiffon",
+            "eyebrow": "A Study in Modern Modesty",
+            "heading": "Grace, Written in Every Fold",
+            "text": "<p>Quiet confidence, shaped in movement.</p>",
+            "button_label": "Discover the collection",
+            "button_link": "shopify://collections/all",
+            "text_color": "#171717",
+            "overlay_opacity": 0
+          }
+        },
+        "modesty_becomes_art": {
+          "type": "slide",
+          "settings": {
+            "image_alt": "Woman with uncovered dark hair wearing a cocoa Imanelli Couture abaya in an ivory-draped atelier",
+            "eyebrow": "Imanelli Signature",
+            "heading": "Where Modesty Becomes Art",
+            "text": "<p>Fluid silhouettes, considered in every detail.</p>",
+            "button_label": "Explore new arrivals",
+            "button_link": "shopify://collections/all",
+            "text_color": "#171717",
+            "overlay_opacity": 0
+          }
+        },
+        "move_with_you": {
+          "type": "slide",
+          "settings": {
+            "image_alt": "Woman in a charcoal embroidered Imanelli Couture abaya framed by a sculptural ivory silk arch",
+            "eyebrow": "Made for the Moment",
+            "heading": "Designed to Move With You",
+            "text": "<p>Lightness, proportion and timeless finish.</p>",
+            "button_label": "Discover Imanelli",
+            "button_link": "shopify://collections/all",
+            "text_color": "#171717",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "grace_in_every_fold",
+        "modesty_becomes_art",
+        "move_with_you"
+      ],
+      "settings": {
+        "autoplay": true,
+        "change_slides_speed": 6,
+        "show_arrows": true,
+        "show_dots": true,
+        "desktop_height": 680
+      }
+    },
+    "new_arrivals": {
+      "type": "imanelli-new-arrivals",
+      "blocks": {
+        "marrakech": {
+          "type": "product",
+          "settings": {
+            "product": "marrakech",
+            "fallback_asset": "marrakech",
+            "title": "Marrakech",
+            "price": "QAR 299",
+            "link": "/products/marrakech"
+          }
+        },
+        "casablanca": {
+          "type": "product",
+          "settings": {
+            "fallback_asset": "casablanca",
+            "title": "Casablanca",
+            "price": "QAR 299",
+            "link": "shopify://collections/all"
+          }
+        },
+        "fes": {
+          "type": "product",
+          "settings": {
+            "fallback_asset": "fes",
+            "title": "Fès",
+            "price": "QAR 299",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "marrakech",
+        "casablanca",
+        "fes"
+      ],
+      "settings": {
+        "eyebrow": "The latest chapter",
+        "heading": "New Arrivals",
+        "link_label": "View the collection",
+        "link": "shopify://collections/all"
+      }
+    },
+    "couture_details": {
+      "type": "imanelli-couture-details",
+      "blocks": {
+        "beadwork": {
+          "type": "detail",
+          "settings": {
+            "fallback_asset": "beadwork",
+            "image_alt": "Black tonal beadwork on an Imanelli Couture abaya"
+          }
+        },
+        "hand_finish": {
+          "type": "detail",
+          "settings": {
+            "fallback_asset": "stitch",
+            "image_alt": "Hand-finishing detail in the Imanelli Couture atelier"
+          }
+        },
+        "ivory_fabric": {
+          "type": "detail",
+          "settings": {
+            "fallback_asset": "ivory",
+            "image_alt": "Soft ivory chiffon folds"
+          }
+        }
+      },
+      "block_order": [
+        "beadwork",
+        "hand_finish",
+        "ivory_fabric"
+      ],
+      "settings": {
+        "eyebrow": "The Imanelli atelier",
+        "heading": "Crafted with Intention",
+        "text": "<p>Where softness meets structure. Every silhouette is considered in movement, proportion and finish.</p>",
+        "link_label": "Discover",
+        "link": "shopify://collections/all"
+      }
+    },
+    "service_bar": {
+      "type": "imanelli-service-bar",
+      "blocks": {
+        "delivery": {
+          "type": "service",
+          "settings": {
+            "title": "Premium delivery across Qatar",
+            "text": "Fast, carefully arranged delivery"
+          }
+        },
+        "returns": {
+          "type": "service",
+          "settings": {
+            "title": "2-day returns",
+            "text": "Accepted within two days of delivery"
+          }
+        },
+        "craftsmanship": {
+          "type": "service",
+          "settings": {
+            "title": "Expert craftsmanship",
+            "text": "Considered fabrics and finishing"
+          }
+        }
+      },
+      "block_order": [
+        "delivery",
+        "returns",
+        "craftsmanship"
+      ],
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "imanelli-newsletter",
+      "settings": {
+        "heading": "Stay Updated",
+        "text": "New arrivals and stories from the Imanelli atelier.",
+        "placeholder": "Email address",
+        "button_label": "Subscribe",
+        "success_message": "Thank you for joining Imanelli Couture."
+      }
+    }
+  },
+  "order": [
+    "imanelli_hero",
+    "new_arrivals",
+    "couture_details",
+    "service_bar",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,291 @@
+<script src="{{ 'imanelli-hero-slider.js' | asset_url }}" defer="defer"></script>
+
+{%- assign slider_id = 'ImanelliHeroSlider-' | append: section.id -%}
+
+<imanelli-hero-slider
+  id="{{ slider_id }}"
+  class="imanelli-hero-slider"
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-interval="{{ section.settings.change_slides_speed | times: 1000 }}"
+  style="--slider-desktop-height: {{ section.settings.desktop_height }}px;"
+  aria-roledescription="carousel"
+  aria-label="Imanelli Couture featured collections"
+>
+  <div class="imanelli-hero-slider__slides">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign desktop_image = block.settings.desktop_image
+        assign mobile_image = block.settings.mobile_image
+        assign desktop_asset = 'imanelli-veiled-1-desktop.webp'
+        assign mobile_asset = 'imanelli-veiled-1-mobile.webp'
+        assign fallback_width = 1672
+        assign fallback_height = 941
+
+        case forloop.index
+          when 2
+            assign desktop_asset = 'imanelli-veiled-2-desktop.webp'
+            assign mobile_asset = 'imanelli-veiled-2-mobile.webp'
+            assign fallback_width = 1672
+            assign fallback_height = 941
+          when 3
+            assign desktop_asset = 'imanelli-veiled-3-desktop.webp'
+            assign mobile_asset = 'imanelli-veiled-3-mobile.webp'
+            assign fallback_width = 1672
+            assign fallback_height = 941
+        endcase
+
+        assign slide_link = block.settings.button_link | default: routes.all_products_collection_url
+        if slide_link contains '/collections/ready-to-wear' and collections['ready-to-wear'] == blank
+          assign slide_link = routes.all_products_collection_url
+        elsif slide_link contains '/collections/made-to-order' and collections['made-to-order'] == blank
+          assign slide_link = routes.all_products_collection_url
+        endif
+
+        assign loading_type = 'lazy'
+        assign fetch_priority = 'auto'
+        if forloop.first
+          assign loading_type = 'eager'
+          assign fetch_priority = 'high'
+        endif
+      -%}
+
+      <article
+        id="{{ slider_id }}-Slide-{{ forloop.index }}"
+        class="imanelli-hero-slider__slide{% if forloop.first %} is-active{% endif %}"
+        data-slide
+        data-block-id="{{ block.id }}"
+        aria-roledescription="slide"
+        aria-label="{{ forloop.index }} of {{ section.blocks.size }}"
+        aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+        style="--slide-overlay: {{ block.settings.overlay_opacity | divided_by: 100.0 }}; --slide-text: {{ block.settings.text_color }};"
+        {{ block.shopify_attributes }}
+      >
+        <div class="imanelli-hero-slider__media">
+          {%- if desktop_image != blank -%}
+            <picture>
+              {%- if mobile_image != blank -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="{{ mobile_image | image_url: width: 750 }} 750w, {{ mobile_image | image_url: width: 1100 }} 1100w"
+                >
+              {%- endif -%}
+              {{
+                desktop_image
+                | image_url: width: 3000
+                | image_tag:
+                  widths: '750, 1100, 1500, 2000, 2500, 3000',
+                  sizes: '100vw',
+                  fetchpriority: fetch_priority,
+                  loading: loading_type,
+                  alt: block.settings.image_alt
+              }}
+            </picture>
+          {%- else -%}
+            <picture>
+              <source media="(max-width: 749px)" srcset="{{ mobile_asset | asset_url }}">
+              <img
+                src="{{ desktop_asset | asset_url }}"
+                width="{{ fallback_width }}"
+                height="{{ fallback_height }}"
+                loading="{{ loading_type }}"
+                {% if forloop.first %}fetchpriority="high"{% endif %}
+                alt="{{ block.settings.image_alt | escape }}"
+              >
+            </picture>
+          {%- endif -%}
+        </div>
+        <div class="imanelli-hero-slider__overlay" aria-hidden="true"></div>
+        <div class="imanelli-hero-slider__content-wrap page-width">
+          <div class="imanelli-hero-slider__content">
+            {%- if block.settings.eyebrow != blank -%}
+              <p class="imanelli-eyebrow">{{ block.settings.eyebrow | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.heading != blank -%}
+              <h2 class="imanelli-hero-slider__title">{{ block.settings.heading | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <div class="imanelli-hero-slider__copy rte">{{ block.settings.text }}</div>
+            {%- endif -%}
+            {%- if block.settings.button_label != blank -%}
+              <a
+                class="button imanelli-hero-slider__button"
+                href="{{ slide_link }}"
+                {% unless forloop.first %}tabindex="-1"{% endunless %}
+              >
+                {{ block.settings.button_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+  {%- if section.blocks.size > 1 -%}
+    {%- if section.settings.show_arrows -%}
+      <button class="imanelli-hero-slider__arrow imanelli-hero-slider__arrow--previous" type="button" data-previous aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5 8 12l7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="imanelli-hero-slider__arrow imanelli-hero-slider__arrow--next" type="button" data-next aria-label="Next slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    {%- endif -%}
+
+    {%- if section.settings.show_dots -%}
+      <div class="imanelli-hero-slider__dots" role="tablist" aria-label="Choose a slide">
+        {%- for block in section.blocks -%}
+          <button
+            class="imanelli-hero-slider__dot{% if forloop.first %} is-active{% endif %}"
+            type="button"
+            data-dot="{{ forloop.index0 }}"
+            aria-label="Go to slide {{ forloop.index }}"
+            aria-controls="{{ slider_id }}-Slide-{{ forloop.index }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          ></button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <p class="visually-hidden" aria-live="polite" data-slider-status>Slide 1 of {{ section.blocks.size }}</p>
+  {%- endif -%}
+</imanelli-hero-slider>
+
+{% schema %}
+{
+  "name": "Imanelli hero slider",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 4,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Change slides every",
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show slide dots",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 560,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "label": "Desktop height",
+      "default": 740
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "default": "Imanelli Couture abaya campaign"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Imanelli Couture"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "The New Edit"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Modern abayas, shaped by quiet confidence.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop the collection"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Desktop text color",
+          "default": "#171717"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 40,
+          "step": 5,
+          "unit": "%",
+          "label": "Desktop overlay opacity",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imanelli hero slider",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Where Modesty Becomes Art"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "heading": "Designed to Move With You"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

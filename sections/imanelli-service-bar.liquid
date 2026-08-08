@@ -1,0 +1,71 @@
+<section class="imanelli-section imanelli-service-bar">
+  <div class="page-width imanelli-service-bar__grid">
+    {%- for block in section.blocks -%}
+      <div class="imanelli-service-bar__item" {{ block.shopify_attributes }}>
+        {%- if block.settings.title != blank -%}
+          <h2 class="imanelli-service-bar__title">{{ block.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+          <p class="imanelli-service-bar__text">{{ block.settings.text | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Imanelli service bar",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Designed in Doha"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Modern modestwear with local perspective"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imanelli service bar",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Designed in Doha",
+            "text": "Modern modestwear with local perspective"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Delivery across Qatar",
+            "text": "Carefully packed and delivered to your door"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Easy exchanges",
+            "text": "Support when you need a different fit"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

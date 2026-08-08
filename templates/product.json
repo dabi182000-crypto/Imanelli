@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {"type": "text", "settings": {"text": "{{ product.vendor }}", "text_style": "uppercase"}},
+        "title": {"type": "title", "settings": {}},
+        "price": {"type": "price", "settings": {}},
+        "variant_picker": {"type": "variant_picker", "settings": {"picker_type": "button", "swatch_shape": "circle"}},
+        "quantity_selector": {"type": "quantity_selector", "settings": {}},
+        "buy_buttons": {"type": "buy_buttons", "settings": {"show_dynamic_checkout": true, "show_gift_card_recipient": true}},
+        "description": {"type": "description", "settings": {}},
+        "size_fit": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Size and length preview",
+            "icon": "ruler",
+            "content": "<p>Preview sizes: S, M, L and XL. Preview lengths: 52, 54, 56, 58 and 60 inches. Final availability may vary by design and will be confirmed before fulfillment.</p>",
+            "page": ""
+          }
+        },
+        "custom_orders": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Made to order & alterations",
+            "icon": "silhouette",
+            "content": "<p>Selected designs are available made to order, with personal alterations where suitable. Preparation time is confirmed individually before the order is finalized.</p>",
+            "page": ""
+          }
+        },
+        "care": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care instructions",
+            "icon": "washing",
+            "content": "<p>Always follow the care label supplied with your abaya. Professional dry cleaning is recommended, and the piece should be stored hanging in a breathable garment bag.</p>",
+            "page": ""
+          }
+        },
+        "delivery": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery, returns & exchanges",
+            "icon": "truck",
+            "content": "<p>Premium fast delivery is available across Qatar. Return or exchange requests for eligible pieces must be submitted within 2 days of delivery. Items must be unworn, unused and in their original condition with tags attached.</p>",
+            "page": ""
+          }
+        },
+        "share": {"type": "share", "settings": {"share_label": "Share"}}
+      },
+      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "size_fit", "custom_orders", "care", "delivery", "share"],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "disclosures": {"type": "disclosures", "settings": {"padding_top": 36, "padding_bottom": 0}},
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": ["main", "disclosures", "related-products"]
+}

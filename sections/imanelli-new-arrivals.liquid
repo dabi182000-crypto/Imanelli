@@ -1,0 +1,175 @@
+<section class="imanelli-section imanelli-new-arrivals">
+  <div class="page-width">
+    <header class="imanelli-new-arrivals__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="imanelli-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="imanelli-new-arrivals__title">{{ section.settings.heading | escape }}</h2>
+    </header>
+
+    <div class="imanelli-new-arrivals__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign card_product = block.settings.product
+          assign card_title = block.settings.title
+          assign card_price = block.settings.price
+          assign card_link = block.settings.link | default: routes.all_products_collection_url
+          assign fallback_asset = 'imanelli-product-marrakech.webp'
+
+          case block.settings.fallback_asset
+            when 'casablanca'
+              assign fallback_asset = 'imanelli-product-casablanca.webp'
+            when 'fes'
+              assign fallback_asset = 'imanelli-product-fes.webp'
+          endcase
+
+          if card_product != blank
+            assign card_title = card_product.title
+            assign card_price = card_product.price | money_with_currency
+            assign card_link = card_product.url
+          endif
+        -%}
+
+        <article class="imanelli-product-card{% if forloop.index == 2 %} imanelli-product-card--featured{% endif %}" {{ block.shopify_attributes }}>
+          <a class="imanelli-product-card__link" href="{{ card_link }}">
+            <div class="imanelli-product-card__media">
+              {%- if card_product != blank and card_product.featured_media != blank -%}
+                {{
+                  card_product.featured_media
+                  | image_url: width: 1800
+                  | image_tag:
+                    widths: '550, 750, 1000, 1400, 1800',
+                    sizes: '(min-width: 990px) 31vw, (min-width: 750px) 45vw, 88vw',
+                    loading: 'lazy',
+                    alt: card_title
+                }}
+              {%- elsif block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 1800
+                  | image_tag:
+                    widths: '550, 750, 1000, 1400, 1800',
+                    sizes: '(min-width: 990px) 31vw, (min-width: 750px) 45vw, 88vw',
+                    loading: 'lazy',
+                    alt: card_title
+                }}
+              {%- else -%}
+                <img
+                  src="{{ fallback_asset | asset_url }}"
+                  width="1600"
+                  height="1600"
+                  loading="lazy"
+                  alt="{{ card_title | escape }}"
+                >
+              {%- endif -%}
+            </div>
+            <div class="imanelli-product-card__content">
+              <h3 class="imanelli-product-card__title">{{ card_title | escape }}</h3>
+              {%- if card_price != blank -%}
+                <p class="imanelli-product-card__price">{{ card_price | escape }}</p>
+              {%- endif -%}
+            </div>
+          </a>
+        </article>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.link_label != blank -%}
+      <div class="imanelli-new-arrivals__footer">
+        <a class="imanelli-text-link" href="{{ section.settings.link | default: routes.all_products_collection_url }}">
+          {{ section.settings.link_label | escape }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Imanelli new arrivals",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The latest chapter"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "View the collection"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Published product"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom image"
+        },
+        {
+          "type": "select",
+          "id": "fallback_asset",
+          "label": "Built-in preview image",
+          "default": "marrakech",
+          "options": [
+            { "value": "marrakech", "label": "Marrakech" },
+            { "value": "casablanca", "label": "Casablanca" },
+            { "value": "fes", "label": "Fès" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Preview title",
+          "default": "Marrakech"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Preview price",
+          "default": "QAR 299"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Preview link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imanelli new arrivals",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product", "settings": { "fallback_asset": "casablanca", "title": "Casablanca" } },
+        { "type": "product", "settings": { "fallback_asset": "fes", "title": "Fès" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

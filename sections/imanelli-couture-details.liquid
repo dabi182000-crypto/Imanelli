@@ -1,0 +1,133 @@
+<section class="imanelli-section imanelli-couture-details">
+  <div class="page-width imanelli-couture-details__grid">
+    <div class="imanelli-couture-details__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="imanelli-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="imanelli-couture-details__title">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.text != blank -%}
+        <div class="imanelli-couture-details__copy rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+      {%- if section.settings.link_label != blank -%}
+        <a class="imanelli-text-link" href="{{ section.settings.link | default: routes.all_products_collection_url }}">
+          {{ section.settings.link_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="imanelli-couture-details__gallery" aria-label="Imanelli Couture fabric and craftsmanship details">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign fallback_asset = 'imanelli-detail-beadwork.webp'
+          case block.settings.fallback_asset
+            when 'stitch'
+              assign fallback_asset = 'imanelli-detail-stitch.webp'
+            when 'ivory'
+              assign fallback_asset = 'imanelli-detail-ivory.webp'
+          endcase
+        -%}
+        <div class="imanelli-couture-details__media" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 1400
+              | image_tag:
+                widths: '450, 650, 900, 1200, 1400',
+                sizes: '(min-width: 990px) 24vw, 88vw',
+                loading: 'lazy',
+                alt: block.settings.image_alt
+            }}
+          {%- else -%}
+            <img
+              src="{{ fallback_asset | asset_url }}"
+              width="900"
+              height="1200"
+              loading="lazy"
+              alt="{{ block.settings.image_alt | escape }}"
+            >
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Imanelli couture details",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The Imanelli atelier"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Crafted with Intention"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Where softness meets structure. Every silhouette is considered in movement, proportion and finish.</p>"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Discover"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "detail",
+      "name": "Detail image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "fallback_asset",
+          "label": "Built-in image",
+          "default": "beadwork",
+          "options": [
+            { "value": "beadwork", "label": "Beadwork" },
+            { "value": "stitch", "label": "Hand finishing" },
+            { "value": "ivory", "label": "Ivory fabric" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "default": "Imanelli Couture craftsmanship detail"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imanelli couture details",
+      "blocks": [
+        { "type": "detail", "settings": { "fallback_asset": "beadwork" } },
+        { "type": "detail", "settings": { "fallback_asset": "stitch" } },
+        { "type": "detail", "settings": { "fallback_asset": "ivory" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

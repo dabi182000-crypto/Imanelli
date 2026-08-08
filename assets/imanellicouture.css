@@ -1,0 +1,775 @@
+@font-face {
+  font-family: 'Imanelli Editorial';
+  src: url('./imanellicouture-editorial.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Imanelli Sans';
+  src: url('./imanellicouture-sans.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  --imanelli-ink: #171717;
+  --imanelli-ivory: #faf7f2;
+  --imanelli-blush: #e8c3bc;
+  --imanelli-stone: #b7a89b;
+  --imanelli-burgundy: #682832;
+  --imanelli-border: rgba(23, 23, 23, 0.14);
+  --imanelli-editorial: 'Imanelli Editorial', Georgia, 'Times New Roman', serif;
+  --imanelli-sans: 'Imanelli Sans', Arial, sans-serif;
+  --font-heading-family: var(--imanelli-editorial);
+  --font-body-family: var(--imanelli-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--imanelli-sans);
+}
+
+body {
+  background: var(--imanelli-ivory);
+  color: var(--imanelli-ink);
+  letter-spacing: 0.015em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: var(--imanelli-editorial);
+  font-weight: 450;
+  letter-spacing: 0.025em;
+}
+
+.button,
+.shopify-payment-button__button--unbranded {
+  min-height: 5rem;
+  border-radius: 0;
+  font-family: var(--imanelli-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover,
+.shopify-payment-button__button--unbranded:hover {
+  transform: translateY(-1px);
+}
+
+.button:after,
+.shopify-payment-button__button--unbranded:after {
+  box-shadow: none;
+}
+
+.page-width {
+  max-width: 144rem;
+}
+
+.utility-bar {
+  min-height: 3.2rem;
+  background: var(--imanelli-ink);
+  color: var(--imanelli-ivory);
+}
+
+.announcement-bar__message {
+  padding: 0.9rem 0;
+  font-family: var(--imanelli-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.header-wrapper {
+  border-color: var(--imanelli-border);
+  background: rgba(250, 247, 242, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+.header {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+}
+
+.header__heading-logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.header__heading-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.header__fallback-logo {
+  display: block;
+  width: min(var(--imanelli-logo-width, 190px), 44vw);
+  height: auto;
+}
+
+.header__menu-item {
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.header__menu-item span {
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.6rem;
+}
+
+.header__icon {
+  color: var(--imanelli-ink);
+}
+
+.imanelli-section {
+  background: var(--imanelli-ivory);
+  color: var(--imanelli-ink);
+}
+
+.imanelli-eyebrow {
+  margin: 0 0 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.imanelli-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid currentColor;
+  color: currentColor;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.imanelli-text-link::after {
+  content: '\2192';
+  transition: transform 180ms ease;
+}
+
+.imanelli-text-link:hover::after {
+  transform: translateX(0.35rem);
+}
+
+.imanelli-hero {
+  position: relative;
+  min-height: clamp(58rem, 74vh, 86rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.imanelli-hero__media,
+.imanelli-hero__media img,
+.imanelli-hero__media picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imanelli-hero__media img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imanelli-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(20, 17, 15, var(--hero-overlay, 0.1)) 0%, rgba(20, 17, 15, 0) 58%);
+}
+
+.imanelli-hero__content-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-height: inherit;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.imanelli-hero__content {
+  width: min(52rem, 45vw);
+  color: var(--hero-text, #171717);
+}
+
+.imanelli-hero__title {
+  max-width: 9ch;
+  margin: 0 0 1.6rem;
+  font-size: clamp(5rem, 6.8vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: 0.015em;
+}
+
+.imanelli-hero__copy {
+  max-width: 40rem;
+  margin: 0 0 2.8rem;
+  font-size: 1.5rem;
+  line-height: 1.65;
+}
+
+.imanelli-hero__button {
+  background: var(--imanelli-ink);
+  color: var(--imanelli-ivory);
+}
+
+.imanelli-hero__button:hover {
+  background: var(--imanelli-burgundy);
+}
+
+.imanelli-collection-tiles {
+  padding-top: clamp(5rem, 8vw, 10rem);
+  padding-bottom: clamp(5rem, 8vw, 10rem);
+}
+
+.imanelli-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-bottom: 3.2rem;
+}
+
+.imanelli-section-heading__title {
+  margin: 0;
+  font-size: clamp(3.4rem, 4.3vw, 6.4rem);
+  line-height: 1;
+}
+
+.imanelli-collection-tiles__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.imanelli-tile {
+  position: relative;
+  min-height: clamp(58rem, 67vw, 88rem);
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.imanelli-tile__media,
+.imanelli-tile__media img {
+  width: 100%;
+  height: 100%;
+}
+
+.imanelli-tile__media {
+  position: absolute;
+  inset: 0;
+}
+
+.imanelli-tile__media img {
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.imanelli-tile:hover .imanelli-tile__media img {
+  transform: scale(1.025);
+}
+
+.imanelli-tile__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(15, 13, 12, 0.68) 100%);
+}
+
+.imanelli-tile__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: clamp(2.8rem, 4.5vw, 6rem);
+}
+
+.imanelli-tile__title {
+  margin: 0 0 1.1rem;
+  color: inherit;
+  font-size: clamp(3.2rem, 4.1vw, 6rem);
+  line-height: 1;
+}
+
+.imanelli-tile__link {
+  color: inherit;
+}
+
+.imanelli-craft {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(36rem, 0.9fr);
+  min-height: 66rem;
+  background: #f1ebe4;
+}
+
+.imanelli-craft--reverse .imanelli-craft__media {
+  order: 2;
+}
+
+.imanelli-craft__media,
+.imanelli-craft__media img {
+  width: 100%;
+  height: 100%;
+}
+
+.imanelli-craft__media img {
+  display: block;
+  object-fit: cover;
+}
+
+.imanelli-craft__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(5rem, 7.5vw, 11rem);
+}
+
+.imanelli-craft__title {
+  max-width: 12ch;
+  margin: 0 0 2rem;
+  font-size: clamp(4rem, 4.8vw, 7rem);
+  line-height: 0.98;
+}
+
+.imanelli-craft__copy {
+  max-width: 48rem;
+  margin-bottom: 2.6rem;
+  font-size: 1.5rem;
+  line-height: 1.75;
+}
+
+.imanelli-newsletter {
+  padding: clamp(5rem, 7vw, 8rem) 0;
+}
+
+.imanelli-newsletter__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(42rem, 1.25fr);
+  align-items: center;
+  gap: 6rem;
+  padding: clamp(3.2rem, 5vw, 6rem);
+  background: linear-gradient(100deg, #f2d9d3, var(--imanelli-blush));
+}
+
+.imanelli-newsletter__title {
+  margin: 0 0 0.8rem;
+  font-size: clamp(3.2rem, 3.8vw, 5.2rem);
+}
+
+.imanelli-newsletter__copy {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.imanelli-newsletter .newsletter-form {
+  max-width: none;
+}
+
+.imanelli-newsletter .newsletter-form__field-wrapper {
+  max-width: none;
+}
+
+.imanelli-newsletter .field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0;
+}
+
+.imanelli-newsletter .field::before,
+.imanelli-newsletter .field::after {
+  display: none;
+}
+
+.imanelli-newsletter .field__input {
+  min-height: 5.4rem;
+  border: 1px solid rgba(23, 23, 23, 0.25);
+  border-right: 0;
+  background: rgba(250, 247, 242, 0.82);
+}
+
+.imanelli-newsletter .field__label {
+  top: 1.7rem;
+}
+
+.imanelli-newsletter__submit {
+  min-width: 14rem;
+  border: 0;
+  background: var(--imanelli-ink);
+  color: var(--imanelli-ivory);
+  font-family: var(--imanelli-sans);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.imanelli-service-bar {
+  border-top: 1px solid var(--imanelli-border);
+  border-bottom: 1px solid var(--imanelli-border);
+}
+
+.imanelli-service-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.imanelli-service-bar__item {
+  padding: 2.4rem 3rem;
+  text-align: center;
+}
+
+.imanelli-service-bar__item + .imanelli-service-bar__item {
+  border-left: 1px solid var(--imanelli-border);
+}
+
+.imanelli-service-bar__title {
+  margin: 0 0 0.4rem;
+  font-family: var(--imanelli-sans);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.imanelli-service-bar__text {
+  margin: 0;
+  color: rgba(23, 23, 23, 0.65);
+  font-size: 1.15rem;
+}
+
+.featured-collection .collection__title,
+.collection .collection__title {
+  text-align: center;
+}
+
+.collection__title .title {
+  font-size: clamp(3.6rem, 4.2vw, 6rem);
+  letter-spacing: 0.04em;
+}
+
+.card__heading,
+.price {
+  font-family: var(--imanelli-sans);
+}
+
+.card__heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.card-information > .price {
+  margin-top: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.card__media .media img {
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-wrapper:hover .card__media .media img {
+  transform: scale(1.02);
+}
+
+.footer {
+  margin-top: 0;
+  border-top: 1px solid var(--imanelli-border);
+  background: var(--imanelli-ivory);
+}
+
+.footer-block__heading {
+  font-family: var(--imanelli-sans);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-block__details-content,
+.footer__copyright,
+.footer__localization {
+  font-size: 1.15rem;
+}
+
+.footer .list-menu__item--link {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.collection-hero__title,
+.main-page-title,
+.title--primary {
+  font-size: clamp(4.2rem, 6vw, 8rem);
+  line-height: 0.98;
+  text-align: center;
+}
+
+.collection-hero__description {
+  max-width: 66rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.facets__heading,
+.facets__summary,
+.facet-filters__label,
+.product-count__text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.product__title h1 {
+  font-size: clamp(4rem, 4.7vw, 6.6rem);
+  line-height: 0.98;
+}
+
+.product__text.caption-with-letter-spacing,
+.product__text.inline-richtext {
+  font-family: var(--imanelli-sans);
+  font-size: 1.05rem;
+  letter-spacing: 0.13em;
+}
+
+.product__info-container .price {
+  font-size: 1.6rem;
+}
+
+.product-form__submit {
+  background: var(--imanelli-ink);
+  color: var(--imanelli-ivory);
+}
+
+.product-form__submit:hover {
+  background: var(--imanelli-burgundy);
+}
+
+.product__accordion {
+  border-color: var(--imanelli-border);
+}
+
+.product__accordion .summary__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cart-drawer,
+.drawer__inner,
+.modal__content {
+  background: var(--imanelli-ivory);
+}
+
+.drawer__heading,
+.cart__empty-text {
+  font-family: var(--imanelli-editorial);
+}
+
+[dir='rtl'] .imanelli-text-link::after {
+  content: '\2190';
+}
+
+[dir='rtl'] .imanelli-service-bar__item + .imanelli-service-bar__item {
+  border-right: 1px solid var(--imanelli-border);
+  border-left: 0;
+}
+
+@media screen and (max-width: 989px) {
+  .header {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+
+  .header__fallback-logo {
+    width: min(132px, 39vw);
+  }
+
+  .imanelli-hero {
+    min-height: 74rem;
+  }
+
+  .imanelli-hero__media img {
+    object-position: 68% center;
+  }
+
+  .imanelli-hero__veil {
+    background: linear-gradient(180deg, rgba(16, 14, 13, 0) 42%, rgba(16, 14, 13, 0.72) 100%);
+  }
+
+  .imanelli-hero__content-wrap {
+    align-items: end;
+    padding-bottom: 5rem;
+  }
+
+  .imanelli-hero__content {
+    width: 100%;
+    color: #fff;
+  }
+
+  .imanelli-hero__title {
+    max-width: 8ch;
+    font-size: clamp(5.2rem, 14vw, 7.6rem);
+  }
+
+  .imanelli-hero__button {
+    background: var(--imanelli-burgundy);
+  }
+
+  .imanelli-craft {
+    grid-template-columns: 1fr;
+  }
+
+  .imanelli-craft--reverse .imanelli-craft__media {
+    order: 0;
+  }
+
+  .imanelli-craft__media {
+    min-height: 46rem;
+  }
+
+  .imanelli-newsletter__inner {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar__message {
+    font-size: 0.9rem;
+    letter-spacing: 0.11em;
+  }
+
+  .imanelli-hero {
+    min-height: 68rem;
+  }
+
+  .imanelli-hero__content-wrap {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .imanelli-hero__copy {
+    max-width: 32rem;
+    font-size: 1.3rem;
+  }
+
+  .imanelli-section-heading {
+    display: block;
+    margin-bottom: 2.4rem;
+  }
+
+  .imanelli-section-heading .imanelli-text-link {
+    margin-top: 1.8rem;
+  }
+
+  .imanelli-collection-tiles {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .imanelli-collection-tiles__grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .imanelli-tile {
+    min-height: 54rem;
+  }
+
+  .imanelli-craft__media {
+    min-height: 38rem;
+  }
+
+  .imanelli-craft__content {
+    padding: 4.8rem 2.4rem 5.4rem;
+  }
+
+  .imanelli-newsletter {
+    padding: 4.8rem 0;
+  }
+
+  .imanelli-newsletter__inner {
+    padding: 3.4rem 2.4rem;
+  }
+
+  .imanelli-newsletter .field {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .imanelli-newsletter .field__input {
+    border-right: 1px solid rgba(23, 23, 23, 0.25);
+  }
+
+  .imanelli-newsletter__submit {
+    min-height: 5rem;
+  }
+
+  .imanelli-service-bar__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .imanelli-service-bar__item + .imanelli-service-bar__item,
+  [dir='rtl'] .imanelli-service-bar__item + .imanelli-service-bar__item {
+    border-top: 1px solid var(--imanelli-border);
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .product-grid.grid--2-col-tablet-down {
+    column-gap: 1.2rem;
+    row-gap: 3.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .imanelli-tile__media img,
+  .card__media .media img,
+  .button,
+  .imanelli-text-link::after {
+    transition: none;
+  }
+}
