@@ -19,13 +19,15 @@
         "modesty_becomes_art": {
           "type": "slide",
           "settings": {
-            "image_alt": "Woman with uncovered dark hair wearing a cocoa Imanelli Couture abaya in an ivory-draped atelier",
-            "eyebrow": "Imanelli Signature",
-            "heading": "Where Modesty Becomes Art",
-            "text": "<p>Fluid silhouettes, considered in every detail.</p>",
-            "button_label": "Explore new arrivals",
+            "desktop_image": "shopify://shop_images/imanelli-couture-craft-desktop.jpg",
+            "mobile_image": "shopify://shop_images/imanelli-couture-craft-mobile.jpg",
+            "image_alt": "Imanelli Couture label being hand stitched onto satin fabric",
+            "eyebrow": "The Art of Couture",
+            "heading": "Handcrafted in Every Stitch",
+            "text": "<p>Where timeless elegance meets considered detail.</p>",
+            "button_label": "Discover New Arrivals",
             "button_link": "shopify://collections/all",
-            "text_color": "#171717",
+            "text_color": "#F4D8CF",
             "overlay_opacity": 0
           }
         },
