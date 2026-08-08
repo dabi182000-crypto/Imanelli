@@ -12,10 +12,6 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .related-products__single-grid {
-    justify-content: center;
-  }
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -28,11 +24,11 @@
   assign curated_related_handles = ''
   case product.handle
     when 'marrakech'
-      assign curated_related_handles = 'casablanca'
+      assign curated_related_handles = 'casablanca,fes'
     when 'casablanca'
-      assign curated_related_handles = 'fes'
+      assign curated_related_handles = 'marrakech,fes'
     when 'fes'
-      assign curated_related_handles = 'marrakech'
+      assign curated_related_handles = 'marrakech,casablanca'
   endcase
   assign curated_related_handles = curated_related_handles | split: ','
 -%}
@@ -44,14 +40,14 @@
         {{ section.settings.heading }}
       </h2>
       <ul
-        class="grid product-grid grid--2-col-desktop grid--1-col-tablet-down related-products__single-grid"
+        class="grid product-grid grid--2-col-desktop grid--1-col-tablet-down related-products__curated-grid"
         role="list"
       >
         {% assign skip_card_product_styles = false %}
         {% for related_handle in curated_related_handles %}
           {% assign related_product = all_products[related_handle] %}
           {% if related_product != blank %}
-            <li class="grid__item">
+            <li class="grid__item related-products__item{% if forloop.index > 1 %} related-products__item--desktop-only{% endif %}">
               {% render 'card-product',
                 card_product: related_product,
                 media_aspect_ratio: section.settings.image_ratio,
@@ -71,7 +67,7 @@
   {%- else -%}
     <product-recommendations
       class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-      data-url="{{ routes.product_recommendations_url }}?limit=1"
+      data-url="{{ routes.product_recommendations_url }}?limit=2"
       data-section-id="{{ section.id }}"
       data-product-id="{{ product.id }}"
     >
@@ -80,12 +76,12 @@
           {{ section.settings.heading }}
         </h2>
         <ul
-          class="grid product-grid grid--2-col-desktop grid--1-col-tablet-down related-products__single-grid"
+          class="grid product-grid grid--2-col-desktop grid--1-col-tablet-down related-products__curated-grid"
           role="list"
         >
           {% assign skip_card_product_styles = false %}
-          {% for recommendation in recommendations.products limit: 1 %}
-            <li class="grid__item">
+          {% for recommendation in recommendations.products limit: 2 %}
+            <li class="grid__item related-products__item{% if forloop.index > 1 %} related-products__item--desktop-only{% endif %}">
               {% render 'card-product',
                 card_product: recommendation,
                 media_aspect_ratio: section.settings.image_ratio,
@@ -288,7 +284,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "t:sections.all.padding.padding_top.label",
       "default": 36
     },
     {
@@ -298,7 +294,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom.label",
       "default": 36
     }
   ]
