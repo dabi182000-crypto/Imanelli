@@ -25,8 +25,11 @@
       {%- liquid
         assign swatch_count = option.values | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
+        assign option_name_downcase = option.name | downcase
 
-        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+        if option_name_downcase contains 'size' or option_name_downcase contains 'length'
+          assign picker_type = 'button'
+        elsif swatch_count > 0 and block.settings.swatch_shape != 'none'
           if block.settings.picker_type == 'dropdown'
             assign picker_type = 'swatch_dropdown'
           else
@@ -50,7 +53,7 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
+        <fieldset class="js product-form__input product-form__input--pill imanelli-variant-table">
           <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
