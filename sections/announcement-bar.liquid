@@ -7,15 +7,38 @@
     color: #171717;
   }
 
+  .announcement-bar-section .utility-bar__grid {
+    min-height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .announcement-bar-section .announcement-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .announcement-bar-section .announcement-bar__message {
+    width: 100%;
+    margin: 0;
     padding: 0.45rem 0;
     min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-size: 1.05rem;
     line-height: 1.25;
     color: #171717;
   }
 
   @media screen and (max-width: 749px) {
+    .announcement-bar-section .utility-bar__grid {
+      min-height: 2.6rem;
+    }
+
     .announcement-bar-section .announcement-bar__message {
       padding: 0.4rem 0;
       min-height: 2.6rem;
