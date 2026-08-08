@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Premium delivery across Qatar",
+            "text": "Same-day delivery all across Qatar",
             "link": ""
           }
         }
@@ -25,7 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
