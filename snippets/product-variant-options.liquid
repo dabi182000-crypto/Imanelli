@@ -18,6 +18,11 @@
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
+  assign option_name_downcase = option.name | downcase
+  assign imanelli_selectable_dimension = false
+  if option_name_downcase contains 'size' or option_name_downcase contains 'length'
+    assign imanelli_selectable_dimension = true
+  endif
 -%}
 
 {%- for value in option.values -%}
@@ -90,7 +95,7 @@
       {% if value.selected %}
         checked
       {% endif %}
-      {% if option_disabled %}
+      {% if option_disabled and imanelli_selectable_dimension == false %}
         class="disabled"
       {% endif %}
       {{ input_dataset }}
