@@ -72,19 +72,21 @@
         "casablanca": {
           "type": "product",
           "settings": {
+            "product": "casablanca",
             "fallback_asset": "casablanca",
             "title": "Casablanca",
             "price": "QAR 299",
-            "link": "shopify://collections/all"
+            "link": "/products/casablanca"
           }
         },
         "fes": {
           "type": "product",
           "settings": {
+            "product": "fes",
             "fallback_asset": "fes",
             "title": "Fès",
             "price": "QAR 299",
-            "link": "shopify://collections/all"
+            "link": "/products/fes"
           }
         }
       },
