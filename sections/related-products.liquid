@@ -12,6 +12,10 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .related-products__single-grid {
+    justify-content: center;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -24,11 +28,11 @@
   assign curated_related_handles = ''
   case product.handle
     when 'marrakech'
-      assign curated_related_handles = 'casablanca,fes'
+      assign curated_related_handles = 'casablanca'
     when 'casablanca'
-      assign curated_related_handles = 'marrakech,fes'
+      assign curated_related_handles = 'fes'
     when 'fes'
-      assign curated_related_handles = 'marrakech,casablanca'
+      assign curated_related_handles = 'marrakech'
   endcase
   assign curated_related_handles = curated_related_handles | split: ','
 -%}
@@ -40,7 +44,7 @@
         {{ section.settings.heading }}
       </h2>
       <ul
-        class="grid product-grid grid--2-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+        class="grid product-grid grid--2-col-desktop grid--1-col-tablet-down related-products__single-grid"
         role="list"
       >
         {% assign skip_card_product_styles = false %}
@@ -67,7 +71,7 @@
   {%- else -%}
     <product-recommendations
       class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-      data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
+      data-url="{{ routes.product_recommendations_url }}?limit=1"
       data-section-id="{{ section.id }}"
       data-product-id="{{ product.id }}"
     >
@@ -76,11 +80,11 @@
           {{ section.settings.heading }}
         </h2>
         <ul
-          class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+          class="grid product-grid grid--2-col-desktop grid--1-col-tablet-down related-products__single-grid"
           role="list"
         >
           {% assign skip_card_product_styles = false %}
-          {% for recommendation in recommendations.products %}
+          {% for recommendation in recommendations.products limit: 1 %}
             <li class="grid__item">
               {% render 'card-product',
                 card_product: recommendation,
