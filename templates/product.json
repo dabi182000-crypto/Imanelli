@@ -37,9 +37,15 @@
             "page": ""
           }
         },
-        "share": {"type": "share", "settings": {"share_label": "Share"}}
+        "share": {"type": "share", "settings": {"share_label": "Share"}},
+        "mobile_gallery_style": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n@media screen and (max-width: 749px) {\n  .product__media-wrapper slider-component[id^='GalleryViewer-'] {\n    margin-left: 0 !important;\n    margin-right: 0 !important;\n  }\n\n  .product__media-wrapper .product__media-list {\n    width: 100% !important;\n    margin-left: 0 !important;\n    padding-left: 0 !important;\n    padding-right: 0 !important;\n    gap: 0 !important;\n    scroll-padding-left: 0 !important;\n  }\n\n  .product__media-wrapper .product__media-list .product__media-item {\n    width: 100% !important;\n    min-width: 100% !important;\n    max-width: 100% !important;\n    flex: 0 0 100% !important;\n    padding-left: 0 !important;\n    padding-right: 0 !important;\n    scroll-snap-align: center !important;\n  }\n\n  .product__media-wrapper .product__media-list.slider--mobile::after {\n    display: none !important;\n  }\n}\n</style>"
+          }
+        }
       },
-      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "care", "delivery", "share"],
+      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "care", "delivery", "share", "mobile_gallery_style"],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
