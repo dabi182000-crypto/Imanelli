@@ -132,6 +132,85 @@ variant-selects {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
+/* Imanelli size and length selector */
+.imanelli-variant-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.2rem, 1fr));
+  gap: 0;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  border: 1px solid rgba(23, 23, 23, 0.28);
+  border-radius: 0;
+}
+
+.imanelli-variant-table .form__label {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0.8rem;
+  border: 0;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.imanelli-variant-table input[type='radio'] + label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.8rem;
+  margin: 0;
+  padding: 1rem 1.2rem;
+  border: 0;
+  border-right: 1px solid rgba(23, 23, 23, 0.22);
+  border-bottom: 1px solid rgba(23, 23, 23, 0.22);
+  border-radius: 0;
+  background: #fffaf6;
+  color: #171717;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.imanelli-variant-table input[type='radio'] + label:hover {
+  background: #f7ebe8;
+  border-color: rgba(23, 23, 23, 0.22);
+}
+
+.imanelli-variant-table input[type='radio']:checked + label {
+  background: #d8aaa4;
+  color: #171717;
+  box-shadow: inset 0 0 0 2px #8f5f5b;
+  font-weight: 700;
+}
+
+.imanelli-variant-table input[type='radio']:focus-visible + label {
+  outline: 2px solid #171717;
+  outline-offset: -3px;
+  box-shadow: none;
+}
+
+.imanelli-variant-table input[type='radio'].disabled + label,
+.imanelli-variant-table input[type='radio']:disabled + label {
+  background: #f4f1ef;
+  color: rgba(23, 23, 23, 0.42);
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+@media screen and (max-width: 749px) {
+  .imanelli-variant-table {
+    grid-template-columns: repeat(auto-fit, minmax(6.4rem, 1fr));
+    max-width: 100%;
+  }
+
+  .imanelli-variant-table input[type='radio'] + label {
+    min-height: 4.6rem;
+    padding: 0.9rem 0.8rem;
+    font-size: 1.25rem;
+  }
+}
+
 /* Custom styles for Swatch display type */
 .product-form__input--swatch {
   display: flex;
