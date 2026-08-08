@@ -36,7 +36,7 @@
             "text": "<p>Considered in every detail.</p>",
             "button_label": "Explore New Arrivals",
             "button_link": "shopify://collections/all",
-            "text_color": "#F4D8CF",
+            "text_color": "#f4d8cf",
             "overlay_opacity": 0
           }
         },
@@ -61,8 +61,8 @@
       ],
       "settings": {
         "autoplay": true,
-        "change_slides_speed": 6,
-        "show_arrows": true,
+        "change_slides_speed": 4,
+        "show_arrows": false,
         "show_dots": true,
         "desktop_height": 680
       }
