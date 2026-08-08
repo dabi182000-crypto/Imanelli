@@ -10,15 +10,6 @@
         "quantity_selector": {"type": "quantity_selector", "settings": {}},
         "buy_buttons": {"type": "buy_buttons", "settings": {"show_dynamic_checkout": false, "show_gift_card_recipient": true}},
         "description": {"type": "description", "settings": {}},
-        "custom_orders": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Made to order & alterations",
-            "icon": "silhouette",
-            "content": "<p>Selected designs are available made to order, with personal alterations where suitable. Preparation time is confirmed individually before the order is finalized.</p>",
-            "page": ""
-          }
-        },
         "care": {
           "type": "collapsible_tab",
           "settings": {
@@ -39,7 +30,7 @@
         },
         "share": {"type": "share", "settings": {"share_label": "Share"}}
       },
-      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "custom_orders", "care", "delivery", "share"],
+      "block_order": ["vendor", "title", "price", "variant_picker", "quantity_selector", "buy_buttons", "description", "care", "delivery", "share"],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
