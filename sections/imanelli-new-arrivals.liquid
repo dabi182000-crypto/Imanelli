@@ -89,6 +89,45 @@
   </div>
 </section>
 
+{% stylesheet %}
+  @media screen and (max-width: 749px) {
+    .imanelli-new-arrivals__grid {
+      display: grid;
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 82vw;
+      gap: 18px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0 9vw 12px;
+      box-sizing: border-box;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 9vw;
+      overscroll-behavior-inline: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .imanelli-new-arrivals__grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .imanelli-new-arrivals__grid .imanelli-product-card,
+    .imanelli-new-arrivals__grid .imanelli-product-card--featured {
+      width: 100%;
+      max-width: none;
+      min-width: 0;
+      margin: 0;
+      transform: none;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Imanelli new arrivals",
