@@ -39,11 +39,27 @@
             "text_color": "#171717",
             "overlay_opacity": 0
           }
+        },
+        "signature_shopping": {
+          "type": "slide",
+          "settings": {
+            "desktop_image": "shopify://shop_images/imanelli-home-slider-shopping-desktop.png",
+            "mobile_image": "shopify://shop_images/imanelli-home-slider-shopping-mobile.png",
+            "image_alt": "Woman in a black abaya holding burgundy Imanelli Couture shopping bags",
+            "eyebrow": "",
+            "heading": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "text_color": "#171717",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
         "move_with_you",
-        "modesty_becomes_art"
+        "modesty_becomes_art",
+        "signature_shopping"
       ],
       "settings": {
         "autoplay": true,
