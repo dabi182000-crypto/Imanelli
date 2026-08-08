@@ -60,50 +60,6 @@
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
         {%- endif -%}
 
-        {%- if product.handle == 'marrakech' -%}
-          <fieldset class="imanelli-product-options" aria-label="{% if request.locale.iso_code == 'ar' %}خيارات المقاس والطول{% else %}Size and length options{% endif %}">
-            <legend class="visually-hidden">
-              {% if request.locale.iso_code == 'ar' %}اختاري المقاس والطول{% else %}Choose your size and length{% endif %}
-            </legend>
-            <div class="imanelli-product-option">
-              <label for="ImanelliSize-{{ section_id }}">
-                {% if request.locale.iso_code == 'ar' %}المقاس{% else %}Size{% endif %}
-              </label>
-              <select id="ImanelliSize-{{ section_id }}" name="properties[Size]" required>
-                <option value="" disabled selected>
-                  {% if request.locale.iso_code == 'ar' %}اختاري المقاس{% else %}Select size{% endif %}
-                </option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
-            </div>
-            <div class="imanelli-product-option">
-              <label for="ImanelliLength-{{ section_id }}">
-                {% if request.locale.iso_code == 'ar' %}الطول{% else %}Length{% endif %}
-              </label>
-              <select id="ImanelliLength-{{ section_id }}" name="properties[Length]" required>
-                <option value="" disabled selected>
-                  {% if request.locale.iso_code == 'ar' %}اختاري الطول{% else %}Select length{% endif %}
-                </option>
-                <option value="52 inches">52</option>
-                <option value="54 inches">54</option>
-                <option value="56 inches">56</option>
-                <option value="58 inches">58</option>
-                <option value="60 inches">60</option>
-              </select>
-            </div>
-            <p class="imanelli-product-options__note">
-              {% if request.locale.iso_code == 'ar' %}
-                خيارات تجريبية للعرض وسيتم تأكيد التفاصيل النهائية مع الطلب.
-              {% else %}
-                Preview options for presentation; final details will be confirmed with the order.
-              {% endif %}
-            </p>
-          </fieldset>
-        {%- endif -%}
-
         <div class="product-form__buttons">
           {%- liquid
             assign check_against_inventory = true
