@@ -655,3 +655,72 @@
     transition: none;
   }
 }
+
+
+/* Imanelli newsletter and product purchase actions */
+.imanelli-newsletter__submit,
+.newsletter-form__button {
+  background-color: var(--imanelli-button-pink, #d8aaa4) !important;
+  color: var(--imanelli-ink, #171717) !important;
+  border-color: var(--imanelli-button-pink, #d8aaa4) !important;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.imanelli-newsletter__submit:hover,
+.newsletter-form__button:hover,
+.imanelli-newsletter__submit:focus,
+.newsletter-form__button:focus,
+.newsletter-form__button:focus-visible {
+  background-color: var(--imanelli-button-pink-hover, #c98f89) !important;
+  color: var(--imanelli-ink, #171717) !important;
+}
+
+.newsletter-form__button .icon,
+.newsletter-form__button svg {
+  color: var(--imanelli-ink, #171717) !important;
+}
+
+.imanelli-product-card__actions,
+.imanelli-card-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.imanelli-product-card__actions .button,
+.imanelli-card-actions .button {
+  width: 100%;
+  min-width: 0;
+  min-height: 4.4rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.imanelli-product-card__buy-now,
+.imanelli-card-buy-now {
+  background-color: #f3d8d4 !important;
+  border: 0.1rem solid #d8aaa4 !important;
+}
+
+.product-form__buttons .product-form__submit,
+.product-form__buttons .shopify-payment-button,
+.product-form__buttons .shopify-payment-button__button {
+  display: block !important;
+  width: 100% !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.product-form__buttons .shopify-payment-button {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 749px) {
+  .imanelli-product-card__actions,
+  .imanelli-card-actions {
+    grid-template-columns: 1fr;
+  }
+}
