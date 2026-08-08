@@ -137,7 +137,7 @@
     bottom: 0;
     width: 90%;
     height: 1px;
-    background: rgba(var(--color-foreground), 0.22);
+    background: #000000;
   }
 
   .collection #product-grid > .grid__item:last-child {
