@@ -163,12 +163,13 @@
 
 .imanelli-hero-slider__button {
   min-height: 4.6rem;
-  background: var(--imanelli-ink);
-  color: var(--imanelli-ivory);
+  background: var(--imanelli-button-pink, #d8aaa4);
+  color: var(--imanelli-ink, #171717);
 }
 
 .imanelli-hero-slider__button:hover {
-  background: var(--imanelli-burgundy);
+  background: var(--imanelli-button-pink-hover, #c98f89);
+  color: var(--imanelli-ink, #171717);
 }
 
 .imanelli-hero-slider__arrow {
