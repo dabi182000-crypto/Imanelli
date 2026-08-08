@@ -97,3 +97,36 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+/* Imanelli catalog presentation */
+.collection #product-grid .card__information,
+.collection #product-grid .card-information,
+.collection #product-grid .card__heading,
+.collection #product-grid .price {
+  text-align: center;
+}
+
+.collection #product-grid .card-information > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collection #product-grid > .grid__item {
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 750px) {
+  .collection #product-grid > .grid__item:nth-child(3n + 2),
+  .collection #product-grid > .grid__item:nth-child(3n + 3) {
+    border-left: 1px solid rgba(var(--color-foreground), 0.14);
+    padding-left: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .collection #product-grid > .grid__item + .grid__item {
+    border-top: 1px solid rgba(var(--color-foreground), 0.14);
+    padding-top: 2.4rem;
+    margin-top: 2.4rem;
+  }
+}
