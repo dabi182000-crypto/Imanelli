@@ -142,6 +142,11 @@ variant-selects {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
+/* Marrakech: hide the legacy size/length preview lines now that real variants exist. */
+product-info[data-product-id='7944482095165'] .product__description ul li:nth-last-child(-n + 2) {
+  display: none;
+}
+
 /* Custom styles for Swatch display type */
 .product-form__input--swatch {
   display: flex;
