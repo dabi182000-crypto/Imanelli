@@ -786,3 +786,49 @@
     width: min(100%, 20rem);
   }
 }
+
+
+/* Uniform new-arrivals cards and single purchase action */
+.imanelli-new-arrivals__grid {
+  align-items: stretch;
+}
+
+.imanelli-product-card,
+.imanelli-product-card--featured {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  transform: none !important;
+}
+
+.imanelli-product-card__link {
+  display: block;
+}
+
+.imanelli-product-card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.imanelli-product-card__content {
+  min-height: 7.2rem;
+}
+
+.imanelli-product-card__actions,
+.imanelli-card-actions {
+  display: flex;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.imanelli-product-card__actions .imanelli-product-card__add,
+.imanelli-card-actions .imanelli-card-add {
+  width: min(100%, 22rem);
+}
+
+.imanelli-product-card__buy-now,
+.imanelli-card-buy-now {
+  display: none !important;
+}
