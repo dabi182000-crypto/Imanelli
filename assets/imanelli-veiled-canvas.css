@@ -724,3 +724,65 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Compact product-card purchase layout */
+.imanelli-product-card__actions,
+.imanelli-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 1.3rem auto 0;
+}
+
+.imanelli-product-card__actions .imanelli-product-card__add,
+.imanelli-card-actions .imanelli-card-add {
+  width: min(100%, 22rem);
+  min-height: 4.2rem;
+  padding: 0.8rem 1.6rem;
+}
+
+.imanelli-product-card__actions .imanelli-product-card__buy-now,
+.imanelli-card-actions .imanelli-card-buy-now {
+  width: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0.45rem 0.3rem !important;
+  border: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: var(--imanelli-ink, #171717) !important;
+  font-size: 0.95rem;
+  font-weight: 550;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.35rem;
+  transform: none !important;
+}
+
+.imanelli-product-card__buy-now::before,
+.imanelli-product-card__buy-now::after,
+.imanelli-card-buy-now::before,
+.imanelli-card-buy-now::after {
+  display: none !important;
+  content: none !important;
+}
+
+.imanelli-product-card__actions .imanelli-product-card__buy-now:hover,
+.imanelli-card-actions .imanelli-card-buy-now:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--imanelli-burgundy, #682832) !important;
+  transform: none !important;
+}
+
+@media screen and (max-width: 749px) {
+  .imanelli-product-card__actions .imanelli-product-card__add,
+  .imanelli-card-actions .imanelli-card-add {
+    width: min(100%, 20rem);
+  }
+}
