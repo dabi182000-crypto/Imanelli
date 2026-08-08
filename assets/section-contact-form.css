@@ -37,3 +37,89 @@
     grid-column-gap: 2rem;
   }
 }
+
+/* Imanelli Couture contact form */
+.contact {
+  --imanelli-contact-ink: #241f1d;
+  --imanelli-contact-border: #b8a6a0;
+  --imanelli-contact-surface: #fffaf8;
+  --imanelli-contact-panel: #f8eeeb;
+}
+
+.contact > .title {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.contact form {
+  padding: 2.4rem 1.8rem;
+  border: 0.1rem solid rgba(82, 61, 55, 0.16);
+  background: var(--imanelli-contact-panel);
+}
+
+.contact .field::before,
+.contact .field::after {
+  display: none;
+}
+
+.contact .field__input {
+  min-height: 5.6rem;
+  border: 0.1rem solid var(--imanelli-contact-border);
+  border-radius: 0.4rem;
+  outline: none;
+  box-shadow: none;
+  background: var(--imanelli-contact-surface);
+  color: var(--imanelli-contact-ink);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.contact .field__input:hover {
+  border-color: #7f6c66;
+}
+
+.contact .field__input:focus {
+  border-color: var(--imanelli-contact-ink);
+  box-shadow: 0 0 0 0.1rem var(--imanelli-contact-ink);
+  background: #ffffff;
+}
+
+.contact .field__label {
+  color: #6f5f5a;
+}
+
+.contact .field__input:focus ~ .field__label,
+.contact .field__input:not(:placeholder-shown) ~ .field__label {
+  color: var(--imanelli-contact-ink);
+}
+
+.contact textarea.field__input {
+  min-height: 18rem;
+  resize: vertical;
+}
+
+.contact__button .button {
+  min-width: 18rem;
+}
+
+@media screen and (max-width: 749px) {
+  .contact > .title {
+    margin-bottom: 2.4rem;
+  }
+
+  .contact form {
+    padding: 2rem 1.4rem;
+  }
+
+  .contact__button .button {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact form {
+    padding: 4rem;
+  }
+}
