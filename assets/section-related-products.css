@@ -5,3 +5,48 @@
 .related-products__heading {
   margin: 0 0 3rem;
 }
+
+.related-products__curated-grid {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.related-products__curated-grid .card__information,
+.related-products__curated-grid .card-information,
+.related-products__curated-grid .card__heading,
+.related-products__curated-grid .price {
+  text-align: center;
+}
+
+.related-products__curated-grid .card-information > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 749px) {
+  .related-products__curated-grid {
+    justify-content: center;
+  }
+
+  .related-products__item--desktop-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .related-products__curated-grid {
+    max-width: 96rem;
+    column-gap: 3.2rem;
+    row-gap: 3.2rem;
+    justify-content: center;
+  }
+
+  .related-products__curated-grid > .grid__item {
+    margin: 0;
+  }
+
+  .related-products__curated-grid .card-wrapper,
+  .related-products__curated-grid .card {
+    height: 100%;
+  }
+}
