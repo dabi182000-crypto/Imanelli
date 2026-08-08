@@ -10,6 +10,9 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
+
+{{ 'component-product-payment-trust.css' | asset_url | stylesheet_tag }}
+
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
     {%- liquid
@@ -98,6 +101,24 @@
           {%- endif -%}
         </div>
       {%- endform -%}
+
+      <div class="product-payment-trust">
+        <p class="product-payment-trust__message">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M12 3 5 6v5c0 4.5 2.9 8.6 7 10 4.1-1.4 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Secure checkout</span>
+        </p>
+        {%- if shop.enabled_payment_types.size > 0 -%}
+          <ul class="product-payment-trust__icons" role="list" aria-label="Accepted payment methods">
+            {%- for type in shop.enabled_payment_types -%}
+              <li>{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        <p class="product-payment-trust__note">Your payment details are processed securely at checkout.</p>
+      </div>
     </product-form>
   {%- else -%}
     <div class="product-form">
