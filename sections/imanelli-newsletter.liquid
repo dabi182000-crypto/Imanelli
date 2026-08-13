@@ -1,11 +1,29 @@
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
 
-<section
-  class="imanelli-section imanelli-newsletter"
-  style="--imanelli-blush-fabric: url('https://cdn.shopify.com/s/files/1/0665/7903/8269/files/newsletter-background-blush-abaya.png?v=1786213351');"
->
-  <div class="page-width">
-    <div class="imanelli-newsletter__inner">
+<style>
+  .imanelli-newsletter,
+  .imanelli-newsletter::before,
+  .imanelli-newsletter::after,
+  .imanelli-newsletter > .page-width,
+  .imanelli-newsletter__inner,
+  .imanelli-newsletter .newsletter-form,
+  .imanelli-newsletter .newsletter-form__field-wrapper,
+  .imanelli-newsletter .field,
+  .imanelli-newsletter .field__input {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+  }
+
+  .imanelli-newsletter__inner {
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+</style>
+
+<section class="imanelli-section imanelli-newsletter" style="background:#FFFFFF !important; background-image:none !important;">
+  <div class="page-width" style="background:#FFFFFF !important;">
+    <div class="imanelli-newsletter__inner" style="background:#FFFFFF !important; background-image:none !important;">
       <div>
         {%- if section.settings.heading != blank -%}
           <h2 class="imanelli-newsletter__title">{{ section.settings.heading | escape }}</h2>
