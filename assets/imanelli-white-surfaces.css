@@ -32,24 +32,50 @@ body,
 .imanelli-new-arrivals,
 .imanelli-couture-details,
 .imanelli-service-bar,
-.imanelli-newsletter,
-.imanelli-newsletter__inner,
-.imanelli-product-card__media,
-.imanelli-newsletter .field__input {
+.imanelli-product-card__media {
+  background: #FFFFFF !important;
   background-color: #FFFFFF !important;
 }
 
-.imanelli-newsletter {
+/* Newsletter: remove the fabric treatment completely and keep every surface white. */
+.imanelli-newsletter,
+.imanelli-newsletter::before,
+.imanelli-newsletter::after,
+.imanelli-newsletter > .page-width,
+.imanelli-newsletter__inner,
+.imanelli-newsletter .newsletter-form,
+.imanelli-newsletter .newsletter-form__field-wrapper,
+.imanelli-newsletter .field,
+.imanelli-newsletter .field__input {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   background-image: none !important;
 }
 
-.imanelli-newsletter__inner {
-  background: #FFFFFF !important;
-}
-
-.footer,
+/* Footer: override Dawn's gradient/background shorthand as well as background-color. */
+footer.footer,
+.footer.color-scheme,
+.footer.gradient,
 .footer__content-top,
 .footer__content-bottom,
+.footer__content-bottom-wrapper,
+.footer__blocks-wrapper,
+.footer-block,
+.footer-block__details-content,
+.footer-block--newsletter,
+.footer-block__newsletter,
+.footer__newsletter,
+.footer .newsletter-form,
+.footer .newsletter-form__field-wrapper,
+.footer .field,
+.footer .field__input,
+.footer__column,
+.footer__copyright {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+}
+
 .collection,
 .collection-hero,
 .product,
@@ -59,5 +85,7 @@ body,
 .drawer__inner,
 .predictive-search,
 .search-modal__content {
+  background: #FFFFFF !important;
   background-color: #FFFFFF !important;
+  background-image: none !important;
 }
