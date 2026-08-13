@@ -265,3 +265,15 @@ body {
 footer.footer {
   border-top: 1px solid rgba(23, 23, 23, 0.12) !important;
 }
+
+/* Homepage hero slider CTAs: outline only, no interior fill. */
+.imanelli-hero-slider .imanelli-hero-slider__button,
+.imanelli-hero-slider .imanelli-hero-slider__button:hover,
+.imanelli-hero-slider .imanelli-hero-slider__button:focus,
+.imanelli-hero-slider .imanelli-hero-slider__button:focus-visible {
+  --alpha-button-background: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #171717 !important;
+  border-color: #171717 !important;
+}
