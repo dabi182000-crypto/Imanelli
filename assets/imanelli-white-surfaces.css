@@ -232,3 +232,27 @@ h6,
   font-style: normal !important;
   font-weight: 700 !important;
 }
+
+/* Mobile viewport containment: keep the page locked to the device width while preserving internal carousels. */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .imanelli-new-arrivals__grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
