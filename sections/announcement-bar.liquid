@@ -1,9 +1,10 @@
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'imanelli-white-surfaces.css' | asset_url | stylesheet_tag }}
 
 <style>
   .announcement-bar-section .utility-bar {
-    background: #d8aaa4 !important;
+    background: #FFFFFF !important;
     color: #171717;
   }
 
@@ -129,7 +130,7 @@
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
                 {{ block.shopify_attributes }}
                 role="group"
-                aria-roledescription="{{ 'sections.announcements.announcement' | t }}"
+                aria-roledescription="{{ 'sections.announcements.announcement_bar' | t }}"
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
                 tabindex="-1"
               >
@@ -251,7 +252,7 @@
     },
     {
       "type": "paragraph",
-         "content": "t:sections.announcement-bar.settings.paragraph.content"
+      "content": "t:sections.announcement-bar.settings.paragraph.content"
     },             
     {
       "type": "checkbox",
