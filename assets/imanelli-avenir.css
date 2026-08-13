@@ -1,0 +1,49 @@
+/* Imanelli Couture — Avenir Next typography */
+:root {
+  --imanelli-sans: 'Avenir Next', Avenir, 'Helvetica Neue', Arial, sans-serif;
+  --imanelli-editorial: 'Avenir Next', Avenir, 'Helvetica Neue', Arial, sans-serif;
+  --font-body-family: 'Avenir Next', Avenir, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading-family: 'Avenir Next', Avenir, 'Helvetica Neue', Arial, sans-serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+  --font-heading-style: normal;
+  --font-heading-weight: 600;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--imanelli-sans) !important;
+  font-style: normal !important;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.main-page-title,
+.collection-hero__title,
+.product__title,
+.card__heading,
+.footer-block__heading,
+.imanelli-hero__title,
+.imanelli-hero-slider__title,
+.imanelli-new-arrivals__title,
+.imanelli-couture-details__title,
+.imanelli-newsletter__title {
+  font-family: var(--imanelli-editorial) !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+}
