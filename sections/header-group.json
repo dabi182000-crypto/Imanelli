@@ -25,6 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -38,7 +39,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        ".header__icon--cart .cart-count-bubble { top: 50%; left: 50%; right: auto; bottom: auto; transform: translate(-50%, -50%); }"
+        ".header__icon--cart .cart-count-bubble {top: 50%; left: 50%; right: auto; bottom: auto; transform: translate(-50%, -50%);}"
       ],
       "settings": {
         "logo_position": "top-center",
