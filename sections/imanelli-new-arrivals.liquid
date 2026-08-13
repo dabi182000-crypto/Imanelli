@@ -101,6 +101,8 @@
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
       padding: 0 9vw 12px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
       box-sizing: border-box;
       overflow-x: auto;
       overflow-y: hidden;
@@ -126,8 +128,12 @@
       scroll-snap-stop: always;
     }
 
+    .imanelli-new-arrivals__grid > .imanelli-product-card:first-child {
+      margin-left: 9% !important;
+    }
+
     .imanelli-new-arrivals__grid > .imanelli-product-card:last-child {
-      margin-right: 9vw;
+      margin-right: 9% !important;
     }
   }
 {% endstylesheet %}
