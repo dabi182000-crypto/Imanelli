@@ -14,7 +14,8 @@
     "footer": {
       "type": "footer",
       "custom_css": [
-        ".footer,.footer.gradient,.footer__content-top,.footer__content-bottom,.footer__content-bottom-wrapper,.footer__blocks-wrapper,.footer-block,.footer__column,.footer__copyright {background:#fff !important;background-color:#fff !important;background-image:none !important;}"
+        ".footer,.footer.gradient,.footer__content-top,.footer__content-bottom,.footer__content-bottom-wrapper,.footer__blocks-wrapper,.footer-block,.footer__column,.footer__copyright {background:#fff !important;background-color:#fff !important;background-image:none !important;}",
+        ".footer {border-top:1px solid rgba(23,23,23,.12) !important;}"
       ],
       "blocks": {
         "shop_menu": {
