@@ -1,5 +1,17 @@
-<section class="imanelli-section imanelli-couture-details" style="background:#FFFFFF !important; background-color:#FFFFFF !important;">
-  <div class="page-width imanelli-couture-details__grid" style="background:#FFFFFF !important;">
+<style>
+  #shopify-section-{{ section.id }},
+  #shopify-section-{{ section.id }} .imanelli-section,
+  #shopify-section-{{ section.id }} .imanelli-couture-details,
+  #shopify-section-{{ section.id }} .imanelli-couture-details__grid,
+  #shopify-section-{{ section.id }} .imanelli-couture-details__content {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+  }
+</style>
+
+<section class="imanelli-section imanelli-couture-details" style="background:#FFFFFF !important; background-color:#FFFFFF !important; background-image:none !important;">
+  <div class="page-width imanelli-couture-details__grid" style="background:#FFFFFF !important; background-color:#FFFFFF !important;">
     <div class="imanelli-couture-details__content">
       {%- if section.settings.eyebrow != blank -%}
         <p class="imanelli-eyebrow">{{ section.settings.eyebrow | escape }}</p>
