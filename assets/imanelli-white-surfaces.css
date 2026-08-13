@@ -256,3 +256,12 @@ body {
     box-sizing: border-box !important;
   }
 }
+
+/* Subtle structural separators. */
+.header-wrapper {
+  border-bottom: 1px solid rgba(23, 23, 23, 0.12) !important;
+}
+
+footer.footer {
+  border-top: 1px solid rgba(23, 23, 23, 0.12) !important;
+}
