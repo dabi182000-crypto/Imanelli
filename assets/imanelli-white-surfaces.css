@@ -162,6 +162,13 @@ footer.footer,
   border-color: #171717 !important;
 }
 
+/* Stay Updated: make the Subscribe button outline explicit because its original style removes the border. */
+.imanelli-newsletter__submit,
+.imanelli-newsletter__submit:hover,
+.imanelli-newsletter__submit:focus-visible {
+  border: 1px solid #171717 !important;
+}
+
 /* Product option selection: keep Size and Length selections white with black text. */
 .product-form__input--pill input[type='radio']:checked + label,
 .product-form__input input[type='radio']:checked + label,
