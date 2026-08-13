@@ -40,7 +40,8 @@
       "type": "header",
       "custom_css": [
         ".header__icon--cart .cart-count-bubble {top: 50%; left: 50%; right: auto; bottom: auto; transform: translate(-50%, -50%);}",
-        ".header-wrapper,.header,.menu-drawer,.menu-drawer__inner-container,.menu-drawer__navigation-container,.menu-drawer__navigation,.menu-drawer__inner-submenu,.menu-drawer__submenu,.menu-drawer__menu,.menu-drawer .list-menu,.menu-drawer__utility-links,.menu-drawer__localization {background:#fff !important;background-color:#fff !important;background-image:none !important;}"
+        ".header-wrapper,.header,.menu-drawer,.menu-drawer__inner-container,.menu-drawer__navigation-container,.menu-drawer__navigation,.menu-drawer__inner-submenu,.menu-drawer__submenu,.menu-drawer__menu,.menu-drawer .list-menu,.menu-drawer__utility-links,.menu-drawer__localization {background:#fff !important;background-color:#fff !important;background-image:none !important;}",
+        ".header-wrapper {border-bottom:1px solid rgba(23,23,23,.12) !important;}"
       ],
       "settings": {
         "logo_position": "top-center",
