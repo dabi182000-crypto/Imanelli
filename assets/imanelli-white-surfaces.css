@@ -188,3 +188,47 @@ footer.footer,
   color: #171717 !important;
   border-color: #171717 !important;
 }
+
+/* Storewide typography: use the existing secondary Imanelli Sans as the single primary family. */
+:root {
+  --font-body-family: var(--imanelli-sans);
+  --font-heading-family: var(--imanelli-sans);
+  --font-heading-style: normal;
+  --font-heading-weight: 700;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--imanelli-sans) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.main-page-title,
+.collection-hero__title,
+.product__title,
+.card__heading,
+.footer-block__heading,
+.imanelli-hero__title,
+.imanelli-hero-slider__title,
+.imanelli-new-arrivals__title,
+.imanelli-couture-details__title,
+.imanelli-newsletter__title {
+  font-family: var(--imanelli-sans) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
