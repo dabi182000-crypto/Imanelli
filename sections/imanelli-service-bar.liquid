@@ -1,5 +1,5 @@
-<section class="imanelli-section imanelli-service-bar">
-  <div class="page-width imanelli-service-bar__grid">
+<section class="imanelli-section imanelli-service-bar" style="background:#FFFFFF !important; background-color:#FFFFFF !important;">
+  <div class="page-width imanelli-service-bar__grid" style="background:#FFFFFF !important;">
     {%- for block in section.blocks -%}
       <div class="imanelli-service-bar__item" {{ block.shopify_attributes }}>
         {%- if block.settings.title != blank -%}
@@ -35,6 +35,34 @@
           "id": "text",
           "label": "Text",
           "default": "Modern modestwear with local perspective"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imanelli service bar",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Designed in Doha",
+            "text": "Modern modestwear with local perspective"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Delivery across Qatar",
+            "text": "Carefully packed and delivered to your door"
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Easy exchanges",
+            "text": "Support when you need a different fit"
+          }
         }
       ]
     }
