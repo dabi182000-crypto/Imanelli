@@ -1,5 +1,15 @@
 <script src="{{ 'imanelli-hero-slider.js' | asset_url }}" defer="defer"></script>
 
+{% stylesheet %}
+  .imanelli-hero-slider .imanelli-hero-slider__button,
+  .imanelli-hero-slider .imanelli-hero-slider__button:hover,
+  .imanelli-hero-slider .imanelli-hero-slider__button:focus-visible {
+    --alpha-button-background: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+{% endstylesheet %}
+
 {%- assign slider_id = 'ImanelliHeroSlider-' | append: section.id -%}
 
 <imanelli-hero-slider
