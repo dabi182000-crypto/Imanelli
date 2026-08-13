@@ -1,0 +1,63 @@
+/* Global white-surface treatment for the Imanelli storefront. */
+
+html,
+body,
+#MainContent,
+.gradient,
+.shopify-section {
+  background-color: #FFFFFF;
+}
+
+.header-wrapper,
+.menu-drawer,
+.menu-drawer__inner-container,
+.menu-drawer__navigation-container,
+.menu-drawer__navigation,
+.menu-drawer__inner-submenu,
+.menu-drawer__submenu,
+.menu-drawer__menu,
+.menu-drawer .list-menu,
+.menu-drawer__utility-links,
+.menu-drawer__localization {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+}
+
+.announcement-bar-section .utility-bar {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+}
+
+.imanelli-hero-slider,
+.imanelli-new-arrivals,
+.imanelli-couture-details,
+.imanelli-service-bar,
+.imanelli-newsletter,
+.imanelli-newsletter__inner,
+.imanelli-product-card__media,
+.imanelli-newsletter .field__input {
+  background-color: #FFFFFF !important;
+}
+
+.imanelli-newsletter {
+  background-image: none !important;
+}
+
+.imanelli-newsletter__inner {
+  background: #FFFFFF !important;
+}
+
+.footer,
+.footer__content-top,
+.footer__content-bottom,
+.collection,
+.collection-hero,
+.product,
+.product__info-wrapper,
+.main-page-title,
+.cart-drawer .drawer__inner,
+.drawer__inner,
+.predictive-search,
+.search-modal__content {
+  background-color: #FFFFFF !important;
+}
