@@ -161,3 +161,23 @@ footer.footer,
   color: #171717 !important;
   border-color: #171717 !important;
 }
+
+/* Product option selection: keep Size and Length selections white with black text. */
+.product-form__input--pill input[type='radio']:checked + label,
+.product-form__input input[type='radio']:checked + label,
+.product-form__input [aria-checked='true'] {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: #171717 !important;
+  border-color: #171717 !important;
+  box-shadow: 0 0 0 1px #171717 !important;
+}
+
+.product-form__input--pill input[type='radio']:checked + label:hover,
+.product-form__input input[type='radio']:checked + label:hover,
+.product-form__input [aria-checked='true']:hover {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: #171717 !important;
+  border-color: #171717 !important;
+}
