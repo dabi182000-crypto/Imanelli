@@ -12,21 +12,6 @@
     "imanelli_hero": {
       "type": "imanelli-hero-slider",
       "blocks": {
-        "modesty_becomes_art": {
-          "type": "slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/imanelli-couture-craft-desktop.jpg",
-            "mobile_image": "shopify://shop_images/imanelli-couture-craft-mobile.jpg",
-            "image_alt": "Imanelli Couture label being hand stitched onto satin fabric",
-            "eyebrow": "The Art of Couture",
-            "heading": "Crafted by Hand",
-            "text": "<p>Considered in every detail.</p>",
-            "button_label": "Explore New Arrivals",
-            "button_link": "shopify://collections/all",
-            "text_color": "#f4d8cf",
-            "overlay_opacity": 0
-          }
-        },
         "move_with_you": {
           "type": "slide",
           "settings": {
@@ -39,27 +24,10 @@
             "text_color": "#171717",
             "overlay_opacity": 0
           }
-        },
-        "signature_shopping": {
-          "type": "slide",
-          "settings": {
-            "desktop_image": "shopify://shop_images/imanelli-home-slider-shopping-desktop.png",
-            "mobile_image": "shopify://shop_images/imanelli-home-slider-shopping-mobile.png",
-            "image_alt": "Woman in a black abaya holding burgundy Imanelli Couture shopping bags",
-            "eyebrow": "",
-            "heading": "",
-            "text": "",
-            "button_label": "Shop the Collection",
-            "button_link": "shopify://collections/all",
-            "text_color": "#171717",
-            "overlay_opacity": 0
-          }
         }
       },
       "block_order": [
-        "move_with_you",
-        "modesty_becomes_art",
-        "signature_shopping"
+        "move_with_you"
       ],
       "settings": {
         "autoplay": true,
