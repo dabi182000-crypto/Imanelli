@@ -13,6 +13,9 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "custom_css": [
+        ".footer,.footer.gradient,.footer__content-top,.footer__content-bottom,.footer__content-bottom-wrapper,.footer__blocks-wrapper,.footer-block,.footer__column,.footer__copyright {background:#fff !important;background-color:#fff !important;background-image:none !important;}"
+      ],
       "blocks": {
         "shop_menu": {
           "type": "link_list",
